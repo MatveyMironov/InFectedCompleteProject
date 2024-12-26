@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414cd377878994e48bafef252230ad99, type: 3}
+  m_Name: SMGCartridgeData
+  m_EditorClassIdentifier: 
+  itemName: SMG Cartridge
+  description: Unique 5.7x28 round designed for armour penetration
+  maxCount: 50
+  size: {x: 4, y: 1}
+  itemUIPrefab: {fileID: 2334047792449161400, guid: f1fd04758984ba5419a4a08595f777f1, type: 3}

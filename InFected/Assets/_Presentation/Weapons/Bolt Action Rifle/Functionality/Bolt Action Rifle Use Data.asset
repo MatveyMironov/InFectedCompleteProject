@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99031b01183c61e4ca5ccd9496d53b6a, type: 3}
+  m_Name: Bolt Action Rifle Use Data
+  m_EditorClassIdentifier: 
+  <Parameters>k__BackingField:
+    <ReloadDifficulty>k__BackingField: 1
+    <RechargeDifficulty>k__BackingField: 1
+  <SoundEffects>k__BackingField:
+    <RechargingSound>k__BackingField: {fileID: 8300000, guid: d939f2e75fc233342b75c31966442aa0, type: 3}
+    <ReloadingingSound>k__BackingField: {fileID: 8300000, guid: a598ac55fc7817c4d89bc87885b9ed7e, type: 3}
+  <AnimatorController>k__BackingField: {fileID: 22100000, guid: 6a7f6fb5ea62e4f418b7cd774e1eee38, type: 2}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cba29bebac40742a32be030d28fcf7, type: 3}
+  m_Name: Bolt Action Rifle Data
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Bolt Action Rifle
+  <Description>k__BackingField: 
+  <Icon>k__BackingField: {fileID: 21300000, guid: 0d8a20f5a52435149b038e16fb94cc3b, type: 3}
+  magazineData: {fileID: 11400000, guid: d3cf15717905df24e82fc895ebefa7cc, type: 2}
+  soundEffects:
+    <ShotSound>k__BackingField: {fileID: 8300000, guid: 7ac41ecf14a42424b9da8f2d3938703f, type: 3}
+    <EmptyMagazineSound>k__BackingField: {fileID: 8300000, guid: b925e301ebe2ce140a25d49ffa6f49f9, type: 3}
+  recieverData: {fileID: 11400000, guid: c856164d716540144b90698251339afd, type: 2}
+  shooterData: {fileID: 11400000, guid: 92942c8be8204af4ca713c35bb683a60, type: 2}
+  useData: {fileID: 11400000, guid: 6a1c79a9575332d4c8be7698be080b9e, type: 2}

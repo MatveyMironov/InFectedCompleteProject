@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9350b91661c56b24db3a2dbd75a488ce, type: 3}
+  m_Name: AssaultRifleData
+  m_EditorClassIdentifier: 
+  itemName: Assault Rifle
+  description: M4A1 used by military
+  maxCount: 1
+  size: {x: 12, y: 3}
+  itemUIPrefab: {fileID: 2334047792449161400, guid: 8ab2f396f99ef44448788d0cd1c6e1ff, type: 3}
+  WeaponDataSO: {fileID: 11400000, guid: 3edaa1ed6008145429df5a16934bbdb7, type: 2}

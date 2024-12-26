@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5500b00a75801d45889458d302fa102, type: 3}
+  m_Name: Automatic Shotgun Shooter Data
+  m_EditorClassIdentifier: 
+  parameters:
+    <ShootingSpread>k__BackingField: 7.5
+    <ProjectilePrefab>k__BackingField: {fileID: 6852816463865441652, guid: 20cc106b0b6811a4b963f3cdc8470e85, type: 3}
+    <ProjectilesPerShot>k__BackingField: 5
+    <ProjectileSpeed>k__BackingField: 35
+    <HitableLayers>k__BackingField:
+      serializedVersion: 2
+      m_Bits: 72
+    <ProjectileDamage>k__BackingField: 5
+    <EffectiveDistance>k__BackingField: 15

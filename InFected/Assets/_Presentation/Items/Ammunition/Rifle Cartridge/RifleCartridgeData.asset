@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414cd377878994e48bafef252230ad99, type: 3}
+  m_Name: RifleCartridgeData
+  m_EditorClassIdentifier: 
+  itemName: Rifle Cartridge
+  description: .300 rounds for sniper rifles
+  maxCount: 15
+  size: {x: 2, y: 2}
+  itemUIPrefab: {fileID: 2334047792449161400, guid: e8a7d085f95c8864bbd9fb49c7cd764c, type: 3}

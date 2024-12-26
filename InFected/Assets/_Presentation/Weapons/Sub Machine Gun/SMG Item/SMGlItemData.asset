@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9350b91661c56b24db3a2dbd75a488ce, type: 3}
+  m_Name: SMGlItemData
+  m_EditorClassIdentifier: 
+  itemName: SMG
+  description: P90 Personal Defense Weapon
+  maxCount: 1
+  size: {x: 7, y: 4}
+  itemUIPrefab: {fileID: 2334047792449161400, guid: b091d47846ce31a44bafcfa0deb825e6, type: 3}
+  WeaponDataSO: {fileID: 11400000, guid: 662b3492d9e2ef44b9eff147d991e1de, type: 2}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cba29bebac40742a32be030d28fcf7, type: 3}
+  m_Name: Pistol Data
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Pistol
+  <Description>k__BackingField: 
+  <Icon>k__BackingField: {fileID: 21300000, guid: 7eb929cdb47fce8478be61ae9f2ddf30, type: 3}
+  magazineData: {fileID: 11400000, guid: 3e72935714911954da2143cd1862fac9, type: 2}
+  soundEffects:
+    <ShotSound>k__BackingField: {fileID: 8300000, guid: a67711e331229fe4fa338b6ca0362429, type: 3}
+    <EmptyMagazineSound>k__BackingField: {fileID: 8300000, guid: b925e301ebe2ce140a25d49ffa6f49f9, type: 3}
+  recieverData: {fileID: 11400000, guid: 1854f7df4aa4b5c428d00c9af4bf4617, type: 2}
+  shooterData: {fileID: 11400000, guid: fb4ef3624e852fb4dbcadc534c0e14e7, type: 2}
+  useData: {fileID: 11400000, guid: 0127c3b1f6c136b4ca91d580169f8c3b, type: 2}

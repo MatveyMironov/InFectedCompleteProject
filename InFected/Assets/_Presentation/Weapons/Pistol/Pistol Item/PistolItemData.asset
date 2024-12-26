@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9350b91661c56b24db3a2dbd75a488ce, type: 3}
+  m_Name: PistolItemData
+  m_EditorClassIdentifier: 
+  itemName: Pistol
+  description: 9 mm pistol, popular in both civilian and military markets
+  maxCount: 1
+  size: {x: 4, y: 2}
+  itemUIPrefab: {fileID: 2334047792449161400, guid: 03c54c4dd789c7d45b93443285919f45, type: 3}
+  WeaponDataSO: {fileID: 11400000, guid: e47e02b0d5089e5449d0cd138515da62, type: 2}

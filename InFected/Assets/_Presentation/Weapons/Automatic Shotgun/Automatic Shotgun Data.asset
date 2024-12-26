@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cba29bebac40742a32be030d28fcf7, type: 3}
+  m_Name: Automatic Shotgun Data
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Automatic Shotgun
+  <Description>k__BackingField: 
+  <Icon>k__BackingField: {fileID: 21300000, guid: 356ef9317428f8644bc66b849491680e, type: 3}
+  magazineData: {fileID: 11400000, guid: 5f3fd81ef1087a54ca781b50c4408cb2, type: 2}
+  soundEffects:
+    <ShotSound>k__BackingField: {fileID: 8300000, guid: 7ac41ecf14a42424b9da8f2d3938703f, type: 3}
+    <EmptyMagazineSound>k__BackingField: {fileID: 8300000, guid: b925e301ebe2ce140a25d49ffa6f49f9, type: 3}
+  recieverData: {fileID: 11400000, guid: bf473ebb050016d45a0e0b4fd91a0484, type: 2}
+  shooterData: {fileID: 11400000, guid: 1c089e3bc9ad45d47820494016266d20, type: 2}
+  useData: {fileID: 11400000, guid: 0755ab43d9e935d4f9a33021a8996ff4, type: 2}
