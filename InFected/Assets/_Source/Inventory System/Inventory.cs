@@ -7,7 +7,7 @@ namespace InventorySystem
 {
     public class Inventory
     {
-        private Dictionary<Item, Vector2Int> _itemsStorageData;
+        private readonly Dictionary<Item, Vector2Int> _itemsStorageData;
 
         public Inventory(Vector2Int inventorySize)
         {

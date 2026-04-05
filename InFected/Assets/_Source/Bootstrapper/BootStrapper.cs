@@ -41,6 +41,7 @@ namespace Core
         [SerializeField] private InventoryUI playerInventoryWindow;
         [SerializeField] private InventoryUI containerInventoryWindow;
         [SerializeField] private HideableUI inventoryMenu;
+        [SerializeField] private InventoryFiller inventoryFiller;
 
         [Header("Key Bank")]
         [SerializeField] private KeyBankUI keyBankUI;
@@ -81,6 +82,7 @@ namespace Core
             PlayerMovementController playerMovementController = new(mainCamera, playerMovement);
 
             Inventory inventory = new(inventorySize);
+            inventoryFiller.FillInventory(inventory);
 
             InventoryUIController playerInventoryUIController = new(playerInventoryWindow);
             playerInventoryUIController.ProvideInventory(inventory);
