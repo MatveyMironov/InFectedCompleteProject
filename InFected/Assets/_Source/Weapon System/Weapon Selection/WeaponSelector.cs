@@ -24,9 +24,9 @@ namespace WeaponSystem
             _inventory.OnItemRemoved += RemoveWeaponItem;
         }
 
-        public int AvailableWeaponItemsCount { get { return _availableWeaponItems.Count;} }
+        public int AvailableWeaponItemsCount => _availableWeaponItems.Count;
         public int SelectedWeaponIndex { get; private set; } = -1;
-        public WeaponItem SelectedWeaponItem { get { return _availableWeaponItems[SelectedWeaponIndex]; } }
+        public WeaponItem SelectedWeaponItem => _availableWeaponItems[SelectedWeaponIndex];
 
         public void SelectWeapon(int weaponIndex)
         {

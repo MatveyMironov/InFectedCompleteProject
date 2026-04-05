@@ -73,6 +73,8 @@ namespace Core
         [Space]
         [SerializeField] private SceneLoader nextLevelLoader;
 
+        private Inventory _inventory;
+
         private void Awake()
         {
             TimePause timePause = new();
@@ -81,22 +83,21 @@ namespace Core
 
             PlayerMovementController playerMovementController = new(mainCamera, playerMovement);
 
-            Inventory inventory = new(inventorySize);
-            inventoryFiller.FillInventory(inventory);
+            _inventory = new(inventorySize);
 
             InventoryUIController playerInventoryUIController = new(playerInventoryWindow);
-            playerInventoryUIController.ProvideInventory(inventory);
+            playerInventoryUIController.ProvideInventory(_inventory);
 
             InventoryUIController containerInventoryWindowController = new(containerInventoryWindow);
 
             InventoryMenuController inventoryMenuController = new(inventoryMenu, timePause, actionMapsController);
             InventoryInteractionManager inventoryManager = new(inventoryMenuController, containerInventoryWindowController);
 
-            WeaponUser weaponUser = new(inventory, baseReloadingTime, baseRechargingTime, equipingTime);
+            WeaponUser weaponUser = new(_inventory, baseReloadingTime, baseRechargingTime, equipingTime);
             WeaponUserController weaponUserController = new(weaponUser);
             WeaponUIController weaponUIController = new(weaponUI, weaponUser);
 
-            WeaponSelector weaponEquiper = new(inventory, weaponBody, weaponUser);
+            WeaponSelector weaponEquiper = new(_inventory, weaponBody, weaponUser);
             WeaponSelectorController weaponEquiperController = new(weaponEquiper);
 
             Health playerHealth = new(maxHealth, maxHealth);
@@ -118,7 +119,7 @@ namespace Core
             StaminaUIController staminaUIController = new(staminaController, staminaUI);
             playerMovement.Setup(staminaController);
 
-            ItemsOfSameTypeProvider<HealingItem> healingItemsProvider = new(inventory);
+            ItemsOfSameTypeProvider<HealingItem> healingItemsProvider = new(_inventory);
             Healing healing = new(playerHealth, healingItemsProvider);
             HealingController healingController = new(healing);
             HealingItemUIController healingItemUIController = new(healingItemUI, healingItemsProvider);
@@ -163,6 +164,11 @@ namespace Core
                                               gamePauseController);
 
             gameStart.Initialize();
+        }
+
+        private void Start()
+        {
+            inventoryFiller.FillInventory(_inventory);
         }
     }
 }
