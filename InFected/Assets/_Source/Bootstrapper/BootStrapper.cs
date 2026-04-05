@@ -62,7 +62,6 @@ namespace Core
 
         [Header("Game UI")]
         [SerializeField] private GameStartMenu gameStartMenu;
-        [SerializeField] private GamePauseMenu gamePauseMenu;
         [SerializeField] private GameWinMenu gameWinMenu;
         [SerializeField] private GameLossMenu gameLossMenu;
 
