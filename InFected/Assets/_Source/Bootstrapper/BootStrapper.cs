@@ -5,7 +5,6 @@ using HealthSystem;
 using InteractionSystem;
 using InventorySystem;
 using KeySystem;
-using NarrativeSystem;
 using PlayerSystem;
 using SprintSystem;
 using UISystem;
@@ -67,9 +66,6 @@ namespace Core
         [SerializeField] private GameWinMenu gameWinMenu;
         [SerializeField] private GameLossMenu gameLossMenu;
 
-        [Header("Narrative")]
-        [SerializeField] private NarrativeTabsAndTriggersBootstrapper narrativeBootstrapper;
-
         [Space]
         [SerializeField] private SceneLoader nextLevelLoader;
 
@@ -123,11 +119,6 @@ namespace Core
             Healing healing = new(playerHealth, healingItemsProvider);
             HealingController healingController = new(healing);
             HealingItemUIController healingItemUIController = new(healingItemUI, healingItemsProvider);
-
-            if (narrativeBootstrapper != null)
-            {
-                narrativeBootstrapper.Bootstrapp(actionMapsController);
-            }
 
             GamePause gamePause = new(timePause, actionMapsController, gamePauseMenu);
             GamePauseController gamePauseController = new(gamePause, gamePauseMenu);

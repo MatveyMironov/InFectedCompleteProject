@@ -1,6 +1,6 @@
 using PlayerSystem;
-using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TriggerZoneSystem
 {
@@ -9,15 +9,29 @@ namespace TriggerZoneSystem
     {
         public bool IsActive;
 
-        public event Action OnTriggerEntered;
+        [Space]
+        public UnityEvent OnTriggerEntered;
+
+        [Space]
+        public UnityEvent OnTriggerExited;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (!IsActive) return;
 
-            if (other.TryGetComponent(out Player player))
+            if (other.TryGetComponent(out Player _))
             {
-                OnTriggerEntered?.Invoke();
+                OnTriggerEntered.Invoke();
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (!IsActive) return;
+
+            if (other.TryGetComponent(out Player _))
+            {
+                OnTriggerExited.Invoke();
             }
         }
     }
