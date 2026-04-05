@@ -12,7 +12,7 @@ namespace DoorSystem
         [Space]
         [SerializeField] private SpriteRenderer colorIndicator;
 
-        protected override KeyDataSO _key => keyCard;
+        protected override KeyConfiguration _key => keyCard;
 
         protected override void Start()
         {

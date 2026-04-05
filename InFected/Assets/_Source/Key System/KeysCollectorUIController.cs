@@ -10,7 +10,7 @@ namespace KeySystem
         private KeyBank _keyBank;
         private LoadCapacityDisplayer _loadCapacityDisplayer;
 
-        private List<KeyDataSO> _collectedKeys;
+        private List<KeyConfiguration> _collectedKeys;
 
         public KeysCollectorUIController(KeysCollector keysCollector, KeyBank keyBank, LoadCapacityDisplayer loadCapacityDisplayer)
         {
@@ -26,7 +26,7 @@ namespace KeySystem
             DisplayCollectedKeys();
         }
 
-        private void AddToCollectedKeys(KeyDataSO key)
+        private void AddToCollectedKeys(KeyConfiguration key)
         {
             if (CheckIfRequiredKey(key))
             {
@@ -38,7 +38,7 @@ namespace KeySystem
             }
         }
 
-        private void RemoveFromCollectedKeys(KeyDataSO key)
+        private void RemoveFromCollectedKeys(KeyConfiguration key)
         {
             if (_collectedKeys.Contains(key))
             {
@@ -47,7 +47,7 @@ namespace KeySystem
             }
         }
 
-        private bool CheckIfRequiredKey(KeyDataSO key)
+        private bool CheckIfRequiredKey(KeyConfiguration key)
         {
             return _keysCollector.RequiredKeys.Contains(key);
         }

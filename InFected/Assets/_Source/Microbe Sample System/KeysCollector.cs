@@ -7,12 +7,12 @@ namespace KeySystem
 {
     public class KeysCollector : MonoBehaviour, IInteractable
     {
-        [SerializeField] private KeyDataSO[] requiredKeys = new KeyDataSO[0];
+        [SerializeField] private KeyConfiguration[] requiredKeys = new KeyConfiguration[0];
 
         [Header("Interaction")]
         [SerializeField] private InteractionIndicator indicator;
 
-        public KeyDataSO[] RequiredKeys { get => requiredKeys; }
+        public KeyConfiguration[] RequiredKeys { get => requiredKeys; }
 
         public event Action OnAllSamplesCollected;
 
@@ -44,9 +44,9 @@ namespace KeySystem
 
         private void RemoveDoubles()
         {
-            List<KeyDataSO> keys = new();
+            List<KeyConfiguration> keys = new();
 
-            foreach (KeyDataSO key in requiredKeys)
+            foreach (KeyConfiguration key in requiredKeys)
             {
                 if (!keys.Contains(key))
                 {
@@ -59,9 +59,9 @@ namespace KeySystem
 
         private bool CheckIfAllCollected(KeyBank keyBank)
         {
-            foreach (KeyDataSO key in requiredKeys)
+            foreach (KeyConfiguration key in requiredKeys)
             {
-                if (!keyBank.CheckIfContains(key))
+                if (!keyBank.CheckIfContainsKey(key))
                 {
                     return false;
                 }

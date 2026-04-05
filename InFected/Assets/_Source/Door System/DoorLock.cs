@@ -22,7 +22,7 @@ namespace DoorSystem
 
         public bool TryFindRequiredKey(KeyBank keyBank)
         {
-            if (keyBank.CheckIfContains(_requiredKeyCard))
+            if (keyBank.CheckIfContainsKey(_requiredKeyCard))
             {
                 IsLocked = true;
 

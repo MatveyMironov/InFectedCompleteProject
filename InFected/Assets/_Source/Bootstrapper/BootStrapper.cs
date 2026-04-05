@@ -42,10 +42,6 @@ namespace Core
         [SerializeField] private HideableUI inventoryMenu;
         [SerializeField] private InventoryFiller inventoryFiller;
 
-        [Header("Key Bank")]
-        [SerializeField] private KeyBankUI keyBankUI;
-        [SerializeField] private HideableUI keyBankMenu;
-
         [Header("Key Collector")]
         [SerializeField] private KeysCollector keysCollector;
         [SerializeField] private LoadCapacityDisplayer keysDisplayer;
@@ -97,12 +93,6 @@ namespace Core
 
             PlayerDeathController playerDeathController = new(playerHealth);
 
-            KeyBank keyBank = new();
-
-            TimePauseMenuController keyBankMenuController = new(keyBankMenu, timePause);
-            KeyBankUIController keyBankUIController = new(keyBankUI, keyBank);
-
-
             StaminaController staminaController = new(maxStamina, staminaRecoveryDelay, staminaRecoveryRate);
             StaminaUIController staminaUIController = new(staminaController, staminaUI);
             playerMovement.Setup(staminaController);
@@ -121,8 +111,6 @@ namespace Core
             LevelTransitionController levelTransitionController = new(nextLevelLoader, gameWinMenu);
 
             Remain remain = new(gameWinMenu, timePause);
-
-            KeysCollectorUIController keysCollectorUIController = new(keysCollector, keyBank, keysDisplayer);
 
             LevelRetryController levelRetryController = new(gameLossMenu);
 

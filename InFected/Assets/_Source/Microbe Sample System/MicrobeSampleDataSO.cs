@@ -4,14 +4,14 @@ using UnityEngine;
 namespace MicrobeSampleSystem
 {
     [CreateAssetMenu(fileName = "NewMicrobeSample", menuName = "Keys/Microbe Sample")]
-    public class MicrobeSampleDataSO : KeyDataSO
+    public class MicrobeSampleDataSO : KeyConfiguration
     {
         [SerializeField] private Sprite microbeSprite;
-        [SerializeField] private MicrobeSampleUI microbeSampleUIPrefab;
+        [SerializeField] private MicrobeSampleDisplayer microbeSampleDisplayerPrefab;
 
-        public override KeyUI CreateKeyUI(Transform parent)
+        public override KeyDisplayer CreateKeyDisplayer()
         {
-            MicrobeSampleUI microbeSampleUI = Instantiate(microbeSampleUIPrefab, parent);
+            MicrobeSampleDisplayer microbeSampleUI = Instantiate(microbeSampleDisplayerPrefab);
             microbeSampleUI.DisplayKey(keyName, microbeSprite);
             return microbeSampleUI;
         }
