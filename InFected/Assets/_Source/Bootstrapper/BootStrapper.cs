@@ -60,11 +60,6 @@ namespace Core
         [SerializeField] private float staminaRecoveryRate;
         [SerializeField] private StaminaUI staminaUI;
 
-        [Header("Audio")]
-        [SerializeField] private VolumeSettingsDataSO volumeSettingsData;
-        [SerializeField] private VolumeSettingsUI volumeSettingsUI;
-        [SerializeField] private AudioMixer audioMixer;
-
         [Header("Game UI")]
         [SerializeField] private GameStartMenu gameStartMenu;
         [SerializeField] private GamePauseMenu gamePauseMenu;
@@ -166,12 +161,6 @@ namespace Core
                                               gamePauseController);
 
             gameStart.Initialize();
-        }
-
-        private void Start()
-        {
-            VolumeSettings volumeSettings = new(audioMixer);
-            VolumeSettingsController volumeSettingsController = new(volumeSettings, volumeSettingsUI, volumeSettingsData);
         }
     }
 }
