@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2968182615539385794}
-  - component: {fileID: 1252408346416072405}
+  - component: {fileID: 272276927169474604}
   m_Layer: 5
   m_Name: Game Pause Menu
   m_TagString: Untagged
@@ -187,7 +187,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1252408346416072405
+--- !u!114 &272276927169474604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,15 +196,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 889698993453838938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fa451952ad93e748a86947bf4086ee8, type: 3}
+  m_Script: {fileID: 11500000, guid: e6e85ff9d9559a946bb1dddc52a10b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainWindow: {fileID: 4087885493474123345}
-  audioSettingsWindow: {fileID: 1182881168645663750}
-  resumeButton: {fileID: 6132729280157404749}
-  quitButton: {fileID: 8321784449286906651}
-  openAudioSettingsButton: {fileID: 6349563303161475611}
-  closeAudioSettingsButton: {fileID: 917030415464075281}
+  gameEvent: {fileID: 11400000, guid: 7047fc58464feb44f8b2a2c176f1c805, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5196962964936447900}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1112020591177970293
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,13 +432,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b71fa402ac9e44d8f78a8d9e0be630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 0}
   volumeSliders:
-  - slider: {fileID: 9102531593539557135}
-    audioGroupName: MasterVolume
-  - slider: {fileID: 82393802263698678}
-    audioGroupName: EffectsVolume
-  - slider: {fileID: 1283312490005689297}
-    audioGroupName: MusicVolume
+  - parameterName: 
+    slider: {fileID: 9102531593539557135}
+  - parameterName: 
+    slider: {fileID: 82393802263698678}
+  - parameterName: 
+    slider: {fileID: 1283312490005689297}
 --- !u!1 &1668416389182146932
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,21 +1,15 @@
 using Core;
-using UISystem;
+using UnityEngine;
 
 namespace GameSystem
 {
     public class GamePause
     {
-        private TimePause _timePause;
-        ActionMapsController _actionMapsController;
-        private GamePauseMenu _pauseMenu;
+        private readonly ActionMapsController _actionMapsController;
 
-        public GamePause(TimePause timePause, ActionMapsController actionMapsController, GamePauseMenu pauseMenu)
+        public GamePause(ActionMapsController actionMapsController)
         {
-            _timePause = timePause;
             _actionMapsController = actionMapsController;
-            _pauseMenu = pauseMenu;
-
-            _pauseMenu.Hide();
         }
 
         public bool IsPaused { get; private set; }
@@ -24,10 +18,10 @@ namespace GameSystem
         {
             if (IsPaused) { return; }
 
-            _timePause.Pause();
+            Time.timeScale = 0.0f;
+
             _actionMapsController.DisableMainActionMap();
             _actionMapsController.DisableJournalActionMap();
-            _pauseMenu.Show();
 
             IsPaused = true;
         }
@@ -36,10 +30,10 @@ namespace GameSystem
         {
             if (!IsPaused) { return; }
 
-            _pauseMenu.Hide();
             _actionMapsController.EnableMainActionMap();
             _actionMapsController.EnableJournalActionMap();
-            _timePause.Unpause();
+            
+            Time.timeScale = 1.0f;
 
             IsPaused = false;
         }

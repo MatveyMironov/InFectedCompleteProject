@@ -119,8 +119,8 @@ namespace Core
             HealingController healingController = new(healing);
             HealingItemUIController healingItemUIController = new(healingItemUI, healingItemsProvider);
 
-            GamePause gamePause = new(timePause, actionMapsController, gamePauseMenu);
-            GamePauseController gamePauseController = new(gamePause, gamePauseMenu);
+            GamePause gamePause = new(actionMapsController);
+            GamePauseController gamePauseController = new(gamePause);
 
             LevelWin levelWin = new(timePause, actionMapsController, gameWinMenu);
             LevelWinController levelWinController = new(keysCollector, levelWin);
@@ -138,10 +138,6 @@ namespace Core
 
             GameStart gameStart = new(timePause, actionMapsController, gameStartMenu);
             GameStartController gameStartController = new(gameStart, gameStartMenu);
-
-            GameQuit gameQuit = new(mainMenuLoader);
-            QuitInputController gameQuitController1 = new(gameQuit, gameLossMenu);
-            QuitInputController gameQuitController3 = new(gameQuit, gamePauseMenu);
 
             InputListener inputListener = new(actionMapsController,
                                               playerMovementController,
