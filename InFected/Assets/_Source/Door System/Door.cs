@@ -53,7 +53,7 @@ namespace DoorSystem
             indicator.HideIndicator();
         }
 
-        public void Interact(Interaction interaction)
+        public void Interact(InteractionData interaction)
         {
             if (IsBlocked || _doorMotor.IsOpened || _doorMotor.IsOpening) return;
 

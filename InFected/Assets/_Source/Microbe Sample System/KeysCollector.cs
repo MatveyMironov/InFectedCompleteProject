@@ -33,7 +33,7 @@ namespace KeySystem
             indicator.HideIndicator();
         }
 
-        public void Interact(Interaction interaction)
+        public void Interact(InteractionData interaction)
         {
             KeyBank keyBank = interaction.KeyBank;
             if (CheckIfAllCollected(keyBank))

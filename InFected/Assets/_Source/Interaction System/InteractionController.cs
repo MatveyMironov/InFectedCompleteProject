@@ -1,29 +1,41 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace InteractionSystem
 {
-    public class InteractionController
+    public class InteractionController : MonoBehaviour
     {
-        private InteractionFinder _interactionFinder;
-        private Interaction _interaction;
+        [SerializeField] private float interactionRadius;
+        [SerializeField] private LayerMask interactableLayers;
+
+        [Space]
+        [SerializeField] private InteractionData interactionData;
 
         private IInteractable _currentInteractable;
 
-        public InteractionController(InteractionFinder interactionFinder, Interaction interaction)
+        private void FixedUpdate()
         {
-            _interactionFinder = interactionFinder;
-            _interaction = interaction;
+            List<IInteractable> interactables = new();
 
-            _interactionFinder.OnInteractablesUpdated += UpdateCurrentInteractable;
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, interactionRadius, interactableLayers);
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.TryGetComponent(out IInteractable interactable))
+                {
+                    interactables.Add(interactable);
+                }
+            }
+
+            UpdateCurrentInteractable(interactables);
         }
 
         public void Interact()
         {
-            if (_currentInteractable != null)
-            {
-                _currentInteractable.Interact(_interaction);
-                _currentInteractable = null;
-            }
+                _currentInteractable.Interact(interactionData);
+            if (_currentInteractable == null) { return; }
+
+            _currentInteractable.Interact(interactionData);
+            _currentInteractable = null;
         }
 
         private void UpdateCurrentInteractable(List<IInteractable> interactables)

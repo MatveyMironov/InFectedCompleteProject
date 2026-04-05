@@ -27,7 +27,7 @@ namespace KeySystem
             indicator.HideIndicator();
         }
 
-        public virtual void Interact(Interaction interaction)
+        public virtual void Interact(InteractionData interaction)
         {
             interaction.PlayInteractionEffect(interactionClip);
             KeyBank keyBank = interaction.KeyBank;

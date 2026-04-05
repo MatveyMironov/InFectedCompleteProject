@@ -27,7 +27,7 @@ public class FieldSurgeryPack : MonoBehaviour, IInteractable
         indicator.HideIndicator();
     }
 
-    public void Interact(Interaction interaction)
+    public void Interact(InteractionData interaction)
     {
         Health health = interaction.Health;
 

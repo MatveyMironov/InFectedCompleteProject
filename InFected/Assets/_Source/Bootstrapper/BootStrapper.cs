@@ -52,7 +52,6 @@ namespace Core
 
         [Header("Interaction")]
         [SerializeField] private AudioSource interactionSource;
-        [SerializeField] private InteractionFinder interactionFinder;
 
         [Header("Sprint")]
         [SerializeField] private int maxStamina;
@@ -103,8 +102,6 @@ namespace Core
             TimePauseMenuController keyBankMenuController = new(keyBankMenu, timePause);
             KeyBankUIController keyBankUIController = new(keyBankUI, keyBank);
 
-            Interaction interaction = new(inventoryManager, keyBank, playerHealth, interactionSource);
-            InteractionController interactionController = new(interactionFinder, interaction);
 
             StaminaController staminaController = new(maxStamina, staminaRecoveryDelay, staminaRecoveryRate);
             StaminaUIController staminaUIController = new(staminaController, staminaUI);

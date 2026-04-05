@@ -12,11 +12,15 @@ namespace InputActionListenerSystem
         private void OnEnable()
         {
             inputAction.action.performed += InvokeEvent;
+
+            inputAction.action.Enable();
         }
 
         private void OnDisable()
         {
             inputAction.action.performed -= InvokeEvent;
+
+            inputAction.action.Disable();
         }
 
         private void InvokeEvent(InputAction.CallbackContext context)
