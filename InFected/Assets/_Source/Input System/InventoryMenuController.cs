@@ -9,16 +9,14 @@ namespace InventorySystem
     {
         private readonly HideableUI _inventoryMenu;
         private readonly TimePause _timePause;
-        private readonly ActionMapsController _actionMapsController;
 
         public event Action OnInventoryOpened;
         public event Action OnInventoryClosed;
 
-        public InventoryMenuController(HideableUI inventoryMenu, TimePause timePause, ActionMapsController actionMapsController)
+        public InventoryMenuController(HideableUI inventoryMenu, TimePause timePause)
         {
             _inventoryMenu = inventoryMenu;
             _timePause = timePause;
-            _actionMapsController = actionMapsController;
         }
 
         public void ToggleInventory()
@@ -37,7 +35,7 @@ namespace InventorySystem
         {
             if (_inventoryMenu.IsUIShown) { return; }
 
-            _actionMapsController.DisableMainActionMap();
+            //_actionMapsController.DisableMainActionMap();
             _timePause.Pause();
             _inventoryMenu.Show();
 
@@ -50,7 +48,7 @@ namespace InventorySystem
 
             _inventoryMenu.Hide();
             _timePause.Unpause();
-            _actionMapsController.EnableMainActionMap();
+            //_actionMapsController.EnableMainActionMap();
 
             OnInventoryClosed?.Invoke();
         }

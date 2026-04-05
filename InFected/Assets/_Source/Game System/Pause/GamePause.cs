@@ -5,13 +5,6 @@ namespace GameSystem
 {
     public class GamePause
     {
-        private readonly ActionMapsController _actionMapsController;
-
-        public GamePause(ActionMapsController actionMapsController)
-        {
-            _actionMapsController = actionMapsController;
-        }
-
         public bool IsPaused { get; private set; }
 
         public void PauseGame()
@@ -20,8 +13,8 @@ namespace GameSystem
 
             Time.timeScale = 0.0f;
 
-            _actionMapsController.DisableMainActionMap();
-            _actionMapsController.DisableJournalActionMap();
+            //_actionMapsController.DisableMainActionMap();
+            //_actionMapsController.DisableJournalActionMap();
 
             IsPaused = true;
         }
@@ -30,8 +23,8 @@ namespace GameSystem
         {
             if (!IsPaused) { return; }
 
-            _actionMapsController.EnableMainActionMap();
-            _actionMapsController.EnableJournalActionMap();
+            //_actionMapsController.EnableMainActionMap();
+            //_actionMapsController.EnableJournalActionMap();
             
             Time.timeScale = 1.0f;
 

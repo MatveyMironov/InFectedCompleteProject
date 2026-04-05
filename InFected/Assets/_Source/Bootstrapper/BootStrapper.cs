@@ -18,7 +18,7 @@ namespace Core
     {
         [SerializeField] private Player player;
         [SerializeField] private Camera mainCamera;
-        [SerializeField] private PlayerMovement playerMovement;
+        [SerializeField] private PlayerMovementController playerMovement;
         [SerializeField] private SceneLoader mainMenuLoader;
 
         [Header("Weapon Use")]
@@ -74,10 +74,6 @@ namespace Core
         {
             TimePause timePause = new();
 
-            ActionMapsController actionMapsController = new();
-
-            PlayerMovementController playerMovementController = new(mainCamera, playerMovement);
-
             _inventory = new(inventorySize);
 
             InventoryUIController playerInventoryUIController = new(playerInventoryWindow);
@@ -85,7 +81,7 @@ namespace Core
 
             InventoryUIController containerInventoryWindowController = new(containerInventoryWindow);
 
-            InventoryMenuController inventoryMenuController = new(inventoryMenu, timePause, actionMapsController);
+            InventoryMenuController inventoryMenuController = new(inventoryMenu, timePause);
             InventoryInteractionManager inventoryManager = new(inventoryMenuController, containerInventoryWindowController);
 
             WeaponUser weaponUser = new(_inventory, baseReloadingTime, baseRechargingTime, equipingTime);
@@ -119,35 +115,26 @@ namespace Core
             HealingController healingController = new(healing);
             HealingItemUIController healingItemUIController = new(healingItemUI, healingItemsProvider);
 
-            GamePause gamePause = new(actionMapsController);
+            GamePause gamePause = new();
             GamePauseController gamePauseController = new(gamePause);
 
-            LevelWin levelWin = new(timePause, actionMapsController, gameWinMenu);
+            LevelWin levelWin = new(timePause, gameWinMenu);
             LevelWinController levelWinController = new(keysCollector, levelWin);
 
             LevelTransitionController levelTransitionController = new(nextLevelLoader, gameWinMenu);
 
-            Remain remain = new(gameWinMenu, timePause, actionMapsController);
+            Remain remain = new(gameWinMenu, timePause);
 
             KeysCollectorUIController keysCollectorUIController = new(keysCollector, keyBank, keysDisplayer);
 
             LevelRetryController levelRetryController = new(gameLossMenu);
 
-            GameLoss gameLoss = new(timePause, actionMapsController, gameLossMenu);
+            GameLoss gameLoss = new(timePause, gameLossMenu);
             GameLossController gameLossController = new(playerDeathController, gameLoss);
 
-            GameStart gameStart = new(timePause, actionMapsController, gameStartMenu);
+            GameStart gameStart = new(timePause, gameStartMenu);
             GameStartController gameStartController = new(gameStart, gameStartMenu);
 
-            InputListener inputListener = new(actionMapsController,
-                                              playerMovementController,
-                                              inventoryMenuController,
-                                              keyBankMenuController,
-                                              weaponEquiperController,
-                                              weaponUserController,
-                                              interactionController,
-                                              healingController,
-                                              gamePauseController);
 
             gameStart.Initialize();
         }

@@ -410,6 +410,9 @@ GameObject:
   - component: {fileID: 4409137440706699322}
   - component: {fileID: 8388389697624704123}
   - component: {fileID: 5661353637638294556}
+  - component: {fileID: 1373754998748817854}
+  - component: {fileID: 9127281947044396739}
+  - component: {fileID: 4911159367259581143}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -571,6 +574,49 @@ MonoBehaviour:
   audioSource: {fileID: 3233402878281665460}
   walkingClip: {fileID: 8300000, guid: 957e136100246964cbcd9c2a8d6b476e, type: 3}
   sprintingClip: {fileID: 8300000, guid: 957e136100246964cbcd9c2a8d6b476e, type: 3}
+--- !u!114 &1373754998748817854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568628746932331549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4769cccf39b79f40916ea268d5b7661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {fileID: 8726253803204434478, guid: 0a4df88ae52c6684091af7cbfb94c201, type: 3}
+  movementController: {fileID: 5661353637638294556}
+--- !u!114 &9127281947044396739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568628746932331549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0cb464670eb3cb46bc1f3abb1816ba2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprint: {fileID: -8791125729545861129, guid: 0a4df88ae52c6684091af7cbfb94c201, type: 3}
+  movementController: {fileID: 5661353637638294556}
+--- !u!114 &4911159367259581143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568628746932331549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f233a5ad5ac764fa07d91aa028e018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aim: {fileID: 8656311072913905461, guid: 0a4df88ae52c6684091af7cbfb94c201, type: 3}
+  mainCamera: {fileID: 0}
+  movementController: {fileID: 5661353637638294556}
 --- !u!1 &7264924532540243317
 GameObject:
   m_ObjectHideFlags: 0
