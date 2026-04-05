@@ -9,7 +9,18 @@ public class LaserAim : MonoBehaviour
     private void Update()
     {
         RaycastHit2D hit = Physics2D.Raycast(muzzle.position, muzzle.up, 100, hitableLayers);
-        Vector3 loacalPosition = muzzle.InverseTransformPoint(hit.point);
-        laserEffect.SetPosition(1, loacalPosition);
+
+        Vector3 rayEndPoint;
+        if (hit.collider == null)
+        {
+            rayEndPoint = muzzle.position + muzzle.up * 100;
+        }
+        else
+        {
+            rayEndPoint = hit.point;
+        }
+
+        Vector3 rayEndPointLocal = muzzle.InverseTransformPoint(rayEndPoint);
+        laserEffect.SetPosition(1, rayEndPointLocal);
     }
 }
