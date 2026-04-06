@@ -5,15 +5,13 @@ namespace InventorySystem
 {
     public class ItemsOfSameTypeProvider<ItemOfType> where ItemOfType : Item
     {
-        private Inventory _inventory;
+        private readonly Inventory _inventory;
 
-        private List<ItemOfType> _itemsOfType;
+        private readonly List<ItemOfType> _itemsOfType = new();
 
         public ItemsOfSameTypeProvider(Inventory inventory)
         {
-            _inventory = inventory;
-
-            _itemsOfType = new();
+            _inventory = inventory ?? throw new ArgumentNullException(nameof(inventory));
 
             FindItemsOfType();
 

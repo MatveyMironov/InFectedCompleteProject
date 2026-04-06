@@ -1,15 +1,12 @@
-using AudioSettingsSystem;
 using GameSystem;
 using HealingSystem;
 using HealthSystem;
-using InteractionSystem;
 using InventorySystem;
 using KeySystem;
 using PlayerSystem;
 using SprintSystem;
 using UISystem;
 using UnityEngine;
-using UnityEngine.Audio;
 using WeaponSystem;
 
 namespace Core
@@ -37,8 +34,6 @@ namespace Core
 
         [Header("Inventory")]
         [SerializeField] private Vector2Int inventorySize;
-        [SerializeField] private InventoryUI playerInventoryWindow;
-        [SerializeField] private InventoryUI containerInventoryWindow;
         [SerializeField] private HideableUI inventoryMenu;
         [SerializeField] private InventoryFiller inventoryFiller;
 
@@ -70,14 +65,6 @@ namespace Core
             TimePause timePause = new();
 
             _inventory = new(inventorySize);
-
-            InventoryUIController playerInventoryUIController = new(playerInventoryWindow);
-            playerInventoryUIController.ProvideInventory(_inventory);
-
-            InventoryUIController containerInventoryWindowController = new(containerInventoryWindow);
-
-            InventoryMenuController inventoryMenuController = new(inventoryMenu, timePause);
-            InventoryInteractionManager inventoryManager = new(inventoryMenuController, containerInventoryWindowController);
 
             WeaponUser weaponUser = new(_inventory, baseReloadingTime, baseRechargingTime, equipingTime);
             WeaponUserController weaponUserController = new(weaponUser);
@@ -119,7 +106,6 @@ namespace Core
 
             GameStart gameStart = new(timePause, gameStartMenu);
             GameStartController gameStartController = new(gameStart, gameStartMenu);
-
 
             gameStart.Initialize();
         }

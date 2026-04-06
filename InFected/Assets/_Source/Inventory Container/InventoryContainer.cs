@@ -6,51 +6,51 @@ using UnityEngine;
 
 public class InventoryContainer : MonoBehaviour, IInteractable
 {
-    [SerializeField] private InteractionIndicator indicator;
-
     [Header("Inventory")]
     [SerializeField] private Vector2Int inventorySize;
     [SerializeField] private List<ItemPlacement> itemsPlacement;
+    [SerializeField] private InventoryFiller inventoryFiller;
 
-    [Header("Interaction Effects")]
+    [Header("Interaction")]
+    [SerializeField] private GameObject interactionIndicator;
     [SerializeField] private AudioClip interactionClip;
 
     private Inventory _inventory;
 
-    private void Start()
+    private void Awake()
     {
         _inventory = new(inventorySize);
-        FillInventory(_inventory.InventoryGrid);
-        indicator.SetInteractionInformation($"Box");
+    }
+
+    private void Start()
+    {
+        inventoryFiller.FillInventory(_inventory);
         HideInteraction();
     }
 
-    #region IInteractable
     public void ShowInteraction()
     {
-        indicator.ShowIndicator();
+        interactionIndicator.SetActive(true);
     }
 
     public void HideInteraction()
     {
-        indicator.HideIndicator();
+        interactionIndicator.SetActive(false);
     }
 
     public void Interact(InteractionData interaction)
     {
-        InventoryInteractionManager inventoryInteractionManager = interaction.InventoryInteractionManager;
-        inventoryInteractionManager.OfferInventory(_inventory);
+        interaction.InventoryInteractionManager.OfferInventory(_inventory);
     }
-    #endregion
 
-    private void FillInventory(InventoryGrid inventoryGrid)
+    private void FillInventory(Inventory inventory)
     {
         foreach (var itemPlacement in itemsPlacement)
         {
             Item item = itemPlacement.ItemData.Item;
             item.Count = itemPlacement.Count;
 
-            if (inventoryGrid.TryPlaceItemAt(item, itemPlacement.PlacementOrigin))
+            if (inventory.TryPlaceItemAt(item, itemPlacement.PlacementOrigin))
             {
 
             }

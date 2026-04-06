@@ -82,9 +82,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af592c98eb1bd714e9fa973ce8383237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 6377638964277826963}
   inventorySize: {x: 12, y: 16}
   itemsPlacement: []
+  inventoryFiller:
+    itemPlacements: []
+  interactionIndicator: {fileID: 3478027722647675241}
   interactionClip: {fileID: 8300000, guid: 2482aa1d79653a647a99a6e014140698, type: 3}
 --- !u!1 &5971469069015312798
 GameObject:
@@ -397,22 +399,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39f6f234b57bbd543b7fa44a11df6abd, type: 3}
+--- !u!1 &3478027722647675241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3838607729714784156, guid: 39f6f234b57bbd543b7fa44a11df6abd, type: 3}
+  m_PrefabInstance: {fileID: 360594378505832181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5674530418550031088 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5458061434774946821, guid: 39f6f234b57bbd543b7fa44a11df6abd, type: 3}
   m_PrefabInstance: {fileID: 360594378505832181}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6377638964277826963 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6737660419570111334, guid: 39f6f234b57bbd543b7fa44a11df6abd, type: 3}
-  m_PrefabInstance: {fileID: 360594378505832181}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd457cf319813be45bbe8994bead4a5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7447119130562958834 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7086534726809244423, guid: 39f6f234b57bbd543b7fa44a11df6abd, type: 3}

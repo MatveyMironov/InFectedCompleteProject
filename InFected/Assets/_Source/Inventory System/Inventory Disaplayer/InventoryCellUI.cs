@@ -6,8 +6,8 @@ namespace InventorySystem
 {
     public class InventoryCellUI : MonoBehaviour, IDropHandler
     {
-        public event Func<ItemUI, bool> OnTryingPlaceItemUI;
-        public event Action<ItemUI> OnRemovingItemUI;
+        public event Func<ItemUI, bool> OnItemPlaceRequested;
+        public event Action<ItemUI> OnItemRemoveRequested;
 
         public void OnDrop(PointerEventData eventData)
         {
@@ -19,12 +19,18 @@ namespace InventorySystem
 
         public bool TryPlaceItemUI(ItemUI itemUI)
         {
-            return (bool)(OnTryingPlaceItemUI?.Invoke(itemUI));
+            if ((bool)(OnItemPlaceRequested?.Invoke(itemUI)))
+            {
+                itemUI.AssignCellUI(this);
+                return true;
+            }
+
+            return false;
         }
 
         public void RemoveItemUI(ItemUI itemUI)
         {
-            OnRemovingItemUI?.Invoke(itemUI);
+            OnItemRemoveRequested?.Invoke(itemUI);
         }
     }
 }

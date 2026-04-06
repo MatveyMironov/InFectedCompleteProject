@@ -7,18 +7,22 @@ namespace InventorySystem
     [Serializable]
     public class InventoryFiller
     {
-        [SerializeField] private List<ItemPlacement> itemsPlacement;
+        [SerializeField] private List<ItemPlacement> itemPlacements;
 
         public void FillInventory(Inventory inventory)
         {
-            foreach (var itemPlacement in itemsPlacement)
+            foreach (var itemPlacement in itemPlacements)
             {
-                Item item = itemPlacement.ItemData.Item;
+                Item item = itemPlacement.Item.Item;
                 item.Count = itemPlacement.Count;
 
-                if (inventory.InventoryGrid.TryPlaceItemAt(item, itemPlacement.PlacementOrigin))
+                if (inventory.TryPlaceItemAt(item, itemPlacement.PlacementOrigin))
                 {
 
+                }
+                else
+                {
+                    Debug.Log($"Failed to place {item.Count} units of {item} at {itemPlacement.PlacementOrigin}");
                 }
             }
         }
@@ -26,7 +30,7 @@ namespace InventorySystem
         [Serializable]
         private class ItemPlacement
         {
-            [field: SerializeField] public ItemDataSO ItemData { get; private set; }
+            [field: SerializeField] public ItemDataSO Item { get; private set; }
             [field: SerializeField] public int Count { get; private set; }
             [field: SerializeField] public Vector2Int PlacementOrigin { get; private set; }
         }

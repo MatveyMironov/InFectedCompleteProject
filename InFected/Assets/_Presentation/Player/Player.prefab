@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 3523527077791975084}
   - component: {fileID: 8514719235183176161}
   - component: {fileID: 8674680691102200923}
+  - component: {fileID: 1932331265535683714}
   m_Layer: 8
   m_Name: Interaction
   m_TagString: Untagged
@@ -486,8 +487,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7b2f4acf27d224ab83e259f56ffb34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InventoryInteractionManager: {fileID: 1932331265535683714}
   KeyBank: {fileID: 11400000, guid: 7bd9348c69dc6bf4d8d9e8f3915a4e79, type: 2}
   InteractionSource: {fileID: 3233402878281665460}
+--- !u!114 &1932331265535683714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3238122848937908695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b529a8eefb7ed0047b794738e7a42ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInventoryOffered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: bd4e098195965304faba07ddfa55488d, type: 2}
+        m_TargetAssemblyTypeName: GameEventSystem.AGameEvent`1[[InventorySystem.Inventory,
+          Assembly-CSharp
+        m_MethodName: Call
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6568628746932331549
 GameObject:
   m_ObjectHideFlags: 0

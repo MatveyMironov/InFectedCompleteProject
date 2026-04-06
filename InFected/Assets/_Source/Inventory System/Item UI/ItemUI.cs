@@ -1,3 +1,4 @@
+using Core;
 using System;
 using TMPro;
 using UnityEngine;
@@ -12,21 +13,60 @@ namespace InventorySystem
         [SerializeField] private TextMeshProUGUI countText;
         [SerializeField] private ItemUIRotation itemUIRotation;
 
-        public event Action OnDragBegun;
-        public event Action OnDragEnded;
+        private Item _item;
+        public Item Item => _item;
 
-        public event Action<ItemUI> OnTryingCombineItemsUI;
+        private InventoryCellUI _currentCellUI;
+        private InventoryCellUI _previousCellUI;
+        private bool _isDragged;
+
         public event Action<ItemUI> OnItemUIDestroyed;
 
-        public Func<ItemUIController> GetItemUIController;
+        private void Start()
+        {
+            if (_currentCellUI == null) { return; }
 
-        public ItemUIRotation Rotation { get { return itemUIRotation; } }
+            OccupyCurrentCellUI();
+        }
+
+        private void OnDestroy()
+        {
+            _item.OnItemCountChanged -= DisplayCount;
+            _item.OnItemCountZero -= DestroyItemUI;
+            _item.OnRotationChanged -= RotateItemUI;
+
+            InputListener.OnRotateItemInputRecieved -= RotateItem;
+
+            OnItemUIDestroyed?.Invoke(this);
+        }
+
+        public void AssignItem(Item item)
+        {
+            _item = item;
+
+            _item.OnItemCountChanged += DisplayCount;
+            _item.OnItemCountZero += DestroyItemUI;
+            _item.OnRotationChanged += RotateItemUI;
+
+            InputListener.OnRotateItemInputRecieved += RotateItem;
+
+            DisplayCount(_item.Count);
+        }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            OnDragBegun?.Invoke();
-
+            //Disable item raycast target so that item can be droped on inventory cells underneath
             image.raycastTarget = false;
+
+            //Item is removed from the cell, but this cell is remembered so that item can be returned
+            _currentCellUI.RemoveItemUI(this);
+            _previousCellUI = _currentCellUI;
+            _currentCellUI = null;
+
+            //Item is placed in the top most transform in the hierarchy so it is displayed on top of everything
+            transform.SetParent(transform.root);
+
+            _isDragged = true;
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -36,27 +76,102 @@ namespace InventorySystem
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            //Enable item raycast target so that item can be picked again
             image.raycastTarget = true;
 
-            OnDragEnded?.Invoke();
+            if (_currentCellUI == null)
+            {
+                ReturnToPreviousCellUI();
+            }
+
+            //Item is placed in the cell
+            OccupyCurrentCellUI();
+
+            _isDragged = false;
         }
 
+        //When other item is droped on this one try to combine them
         public void OnDrop(PointerEventData eventData)
         {
             if (eventData.pointerDrag.TryGetComponent(out ItemUI itemUI))
             {
-                OnTryingCombineItemsUI?.Invoke(itemUI);
+                TryCombineWithItem(itemUI);
             }
         }
 
-        private void OnDestroy()
+        public void AssignCellUI(InventoryCellUI cellUI)
         {
-            OnItemUIDestroyed?.Invoke(this);
+            _currentCellUI = cellUI;
         }
 
-        public void DisplayCount(int count)
+        private void ReturnToPreviousCellUI()
+        {
+            _currentCellUI = _previousCellUI;
+            _previousCellUI = null;
+
+            if (!_currentCellUI.TryPlaceItemUI(this))
+            {
+                _item.IsRotated = !_item.IsRotated;
+                _currentCellUI.TryPlaceItemUI(this);
+            }
+        }
+
+        private void OccupyCurrentCellUI()
+        {
+            transform.SetParent(_currentCellUI.transform);
+        }
+
+        private void DisplayCount(int count)
         {
             countText.text = count.ToString();
+        }
+
+        private void DestroyItemUI(Item item)
+        {
+            Destroy(gameObject);
+        }
+
+        private void TryCombineWithItem(ItemUI itemUI)
+        {
+            if (itemUI == null) { return; }
+            if (itemUI == this) { return; }
+
+            Item combinedItem = itemUI._item;
+            if (_item.ItemData != combinedItem.ItemData) { return; }
+
+            int availableSpace = _item.MaxCount - _item.Count;
+            if (availableSpace <= 0) { return; }
+
+            if (availableSpace >= combinedItem.Count)
+            {
+                _item.Count += combinedItem.Count;
+                combinedItem.Count = 0;
+            }
+            else
+            {
+                _item.Count = _item.MaxCount;
+                combinedItem.Count -= availableSpace;
+            }
+        }
+
+        private void RotateItem()
+        {
+            if (_isDragged)
+            {
+                _item.IsRotated = !_item.IsRotated;
+            }
+        }
+
+        private void RotateItemUI(bool isRotated)
+        {
+            if (isRotated)
+            {
+                itemUIRotation.RotateToAlternative();
+            }
+            else
+            {
+                itemUIRotation.RotateToDefault();
+            }
         }
     }
 }
