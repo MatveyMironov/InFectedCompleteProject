@@ -968,7 +968,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 987544643836539796, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
       propertyPath: m_Name
-      value: Weapon Body
+      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 987544643836539796, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
       propertyPath: m_Layer
@@ -1021,8 +1021,160 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 987544643836539796, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2799696533580802554}
+    - targetCorrespondingSourceObject: {fileID: 987544643836539796, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3716654775883420439}
+    - targetCorrespondingSourceObject: {fileID: 987544643836539796, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6391618582194717857}
+    - targetCorrespondingSourceObject: {fileID: 987544643836539796, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7482497595359190888}
+    - targetCorrespondingSourceObject: {fileID: 987544643836539796, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4236811197816101346}
+    - targetCorrespondingSourceObject: {fileID: 987544643836539796, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 132673924908371677}
   m_SourcePrefab: {fileID: 100100000, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
+--- !u!1 &753916731342887173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 987544643836539796, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
+  m_PrefabInstance: {fileID: 559015741339069073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2799696533580802554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753916731342887173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023dfedd835e1c745a74a395aacb00bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySO: {fileID: 11400000, guid: c699b26555df8154687d12534d5a61c4, type: 2}
+  weaponBody: {fileID: 7587304646253310849}
+  _weaponUser: {fileID: 3716654775883420439}
+--- !u!114 &3716654775883420439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753916731342887173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c6156aab406304d95cddffb4bb745c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseReloadingTime: 1
+  baseRechargingTime: 1
+  equipingTime: 1
+  inventorySO: {fileID: 11400000, guid: c699b26555df8154687d12534d5a61c4, type: 2}
+--- !u!114 &6391618582194717857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753916731342887173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13095816b1eaa84087e04c455157549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shoot: {fileID: 3036314507823223329, guid: 0a4df88ae52c6684091af7cbfb94c201, type: 3}
+  weaponUser: {fileID: 3716654775883420439}
+--- !u!114 &7482497595359190888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753916731342887173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f4e9cf095e6ee41a9edde4dc90d515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputAction: {fileID: 5489795323243026137, guid: 0a4df88ae52c6684091af7cbfb94c201, type: 3}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3716654775883420439}
+        m_TargetAssemblyTypeName: WeaponSystem.WeaponUser, Assembly-CSharp
+        m_MethodName: ReloadWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4236811197816101346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753916731342887173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f4e9cf095e6ee41a9edde4dc90d515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputAction: {fileID: -1529076895615795406, guid: 0a4df88ae52c6684091af7cbfb94c201, type: 3}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2799696533580802554}
+        m_TargetAssemblyTypeName: WeaponSystem.WeaponSelector, Assembly-CSharp
+        m_MethodName: SelectNextWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &132673924908371677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753916731342887173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f4e9cf095e6ee41a9edde4dc90d515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputAction: {fileID: 7734750375448672261, guid: 0a4df88ae52c6684091af7cbfb94c201, type: 3}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2799696533580802554}
+        m_TargetAssemblyTypeName: WeaponSystem.WeaponSelector, Assembly-CSharp
+        m_MethodName: SelectPreviousWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &3296427882967179833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3061680748696062120, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
@@ -1033,6 +1185,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7198926269486189419, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
   m_PrefabInstance: {fileID: 559015741339069073}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7587304646253310849 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7965038955500706064, guid: 7c4205c381b327f46bb577c1ad14aa39, type: 3}
+  m_PrefabInstance: {fileID: 559015741339069073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753916731342887173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9611ad990f3c73f47a4b4599c709cc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7666163381312081536
 PrefabInstance:
   m_ObjectHideFlags: 0

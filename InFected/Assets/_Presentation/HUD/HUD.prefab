@@ -571,7 +571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8509428159096669887, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
       propertyPath: m_Name
-      value: Weapon UI
+      value: Weapon Displayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -60,15 +60,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Scroll",
-                    "type": "Value",
-                    "id": "1c5c4c4c-2c8a-4b46-a783-e9f37076962d",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "Heal",
                     "type": "Button",
                     "id": "06e5b4f6-f400-4468-871b-55f83c92d8a1",
@@ -81,6 +72,24 @@
                     "name": "ToggleKeyBank",
                     "type": "Button",
                     "id": "3fa8ee98-8474-4d4e-a942-7cab0161df37",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Next Weapon",
+                    "type": "Button",
+                    "id": "2e156a08-0861-4c45-a613-6d9960dd9f73",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select Previous Weapon",
+                    "type": "Button",
+                    "id": "31a82099-54f9-4f97-860b-5381d771ef27",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -200,17 +209,6 @@
                 },
                 {
                     "name": "",
-                    "id": "868b525c-3a5f-4e41-acd0-e6b29de2475f",
-                    "path": "<Mouse>/scroll/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Scroll",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "5d91e62b-fe4e-4c38-babe-7fd4dd178191",
                     "path": "<Keyboard>/q",
                     "interactions": "",
@@ -228,6 +226,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "ToggleKeyBank",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "75980b03-24fa-4bfc-b0b9-8e9a57664fca",
+                    "path": "<Mouse>/forwardButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Next Weapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b95fcebd-58a1-426f-9413-7894f112ab53",
+                    "path": "<Mouse>/backButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Previous Weapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

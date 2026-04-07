@@ -9,24 +9,36 @@ namespace Core
         [SerializeField] private InputActionReference shoot;
 
         [Space]
-        [SerializeField] private WeaponUserController weaponUserController;
+        [SerializeField] private WeaponUser weaponUser;
 
         private void OnEnable()
         {
             shoot.action.started += OnShootInput;
             shoot.action.canceled += OnShootInput;
+
+            shoot.action.Enable();
         }
 
         private void OnDisable()
         {
             shoot.action.started += OnShootInput;
             shoot.action.canceled += OnShootInput;
+
+            shoot.action.Disable();
         }
 
         private void OnShootInput(InputAction.CallbackContext context)
         {
             bool isTriggerPulled = context.ReadValueAsButton();
-            weaponUserController.ControlTrigger(isTriggerPulled);
+
+            if (isTriggerPulled)
+            {
+                weaponUser.PullWeaponTrigger();
+            }
+            else
+            {
+                weaponUser.ReleaseWeaponTrigger();
+            }
         }
     }
 }

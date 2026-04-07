@@ -4,25 +4,49 @@ using UnityEngine;
 
 namespace WeaponSystem
 {
-    public class WeaponUser
+    public class WeaponUser : MonoBehaviour
     {
-        private readonly Inventory _inventory;
+        [SerializeField] private float baseReloadingTime;
+        [SerializeField] private float baseRechargingTime;
+        [SerializeField] private float equipingTime;
 
-        private WeaponController _weaponController;
+        [Space]
+        [SerializeField] private InventorySO inventorySO;
+
+        private Inventory _inventory;
+
+        private WeaponController _equipedWeaponController;
         private ItemsOfSameKindProvider _ammunitionItemProvider;
 
-        private readonly ReloadIngWeaponState _reloadingState;
-        private readonly RechargingWeaponState _rechargingState;
-        private readonly PullingTriggerState _pullingTriggerState;
-        private readonly HoldingWeaponState _holdingWeaponState;
-        private readonly NoWeaponState _noWeaponState;
-        private readonly EquipingWeaponState _equipingWeaponState;
+        private ReloadIngWeaponState _reloadingState;
+        private RechargingWeaponState _rechargingState;
+        private PullingTriggerState _pullingTriggerState;
+        private HoldingWeaponState _holdingWeaponState;
+        private NoWeaponState _noWeaponState;
+        private EquipingWeaponState _equipingWeaponState;
 
         private UsingWeaponState _currentState;
 
-        public WeaponUser(Inventory inventory, float baseReloadingTime, float baseRechargingTime, float equipingTime)
+        #region Weapon Properties
+        public int WeaponID => _equipedWeaponController.WeaponID;
+        public string WeaponName => _equipedWeaponController.WeaponName;
+        public Sprite WeaponSprite => _equipedWeaponController.WeaponSprite;
+        public ItemDataSO AmmunitionType => _equipedWeaponController?.AmmunitionType;
+        public int AvailableAmmunition => (_ammunitionItemProvider != null) ? _ammunitionItemProvider.ItemsCount : 0;
+        public int LoadedAmmunition => (_equipedWeaponController != null) ? _equipedWeaponController.MagazineLoad : 0;
+        public int MagazineCapacity => (_equipedWeaponController != null) ? _equipedWeaponController.MagazineCapacity : 0;
+        public ItemDataSO CurrentWeaponAmmunition => _equipedWeaponController?.AmmunitionType;
+        public int LoadedAmmo => _equipedWeaponController.MagazineLoad;
+        #endregion
+
+        public event Action<WeaponController> OnWeaponEquiped;
+        public event Action OnWeaponHolstered;
+        public event Action<int> OnMagazineLoadChanged;
+        public event Action<int> OnAvailbleAmmunitionCountChanged;
+
+        private void Awake()
         {
-            _inventory = inventory;
+            _inventory = inventorySO.Inventory;
 
             _rechargingState = new(baseRechargingTime);
             _reloadingState = new(baseReloadingTime, baseRechargingTime);
@@ -38,40 +62,28 @@ namespace WeaponSystem
             _currentState = _noWeaponState;
         }
 
-
-
-        #region Weapon Properties
-        public int WeaponID { get { return _weaponController.WeaponID; } }
-        public string WeaponName { get => _weaponController.WeaponName; }
-        public Sprite WeaponSprite { get => _weaponController.WeaponSprite; }
-        public ItemDataSO AmmunitionType { get { return _weaponController?.AmmunitionType; } }
-        public int AvailableAmmunition { get => _ammunitionItemProvider != null ? _ammunitionItemProvider.ItemsCount : 0; }
-        public int LoadedAmmunition { get { return (_weaponController != null) ? _weaponController.MagazineLoad : 0; } }
-        public int MagazineCapacity { get { return (_weaponController != null) ? _weaponController.MagazineCapacity : 0; } }
-        public ItemDataSO CurrentWeaponAmmunition { get { return _weaponController?.AmmunitionType; } }
-        public int LoadedAmmo { get { return _weaponController.MagazineLoad; } }
-        #endregion
-
-        public event Action<WeaponController> OnWeaponEquiped;
-        public event Action OnWeaponHolstered;
-        public event Action<int> OnMagazineLoadChanged;
-        public event Action<int> OnAvailbleAmmunitionCountChanged;
+        private void OnDestroy()
+        {
+            _rechargingState.OnStateFinished -= HoldWeapon;
+            _reloadingState.OnStateFinished -= HoldWeapon;
+            _equipingWeaponState.OnStateFinished -= HoldWeapon;
+        }
 
         public void EquipWeapon(WeaponController weaponController)
         {
             RemoveWeapon();
 
-            _weaponController = weaponController;
-            _weaponController.OnMagazineLoadChanged += InvokeOnMagazineLoadChanged;
+            _equipedWeaponController = weaponController;
+            _equipedWeaponController.OnMagazineLoadChanged += InvokeOnMagazineLoadChanged;
 
-            _ammunitionItemProvider = new(_inventory, _weaponController.AmmunitionType);
+            _ammunitionItemProvider = new(_inventory, _equipedWeaponController.AmmunitionType);
             _ammunitionItemProvider.OnItemsCountChanged += InvokeOnAvailableAmmunitionCountChanged;
             InvokeOnAvailableAmmunitionCountChanged(_ammunitionItemProvider.ItemsCount);
 
-            _reloadingState.SetWeapon(_weaponController, _ammunitionItemProvider);
-            _rechargingState.SetWeapon(_weaponController);
-            _pullingTriggerState.SetWeapon(_weaponController);
-            _equipingWeaponState.SetWeapon(_weaponController);
+            _reloadingState.SetWeapon(_equipedWeaponController, _ammunitionItemProvider);
+            _rechargingState.SetWeapon(_equipedWeaponController);
+            _pullingTriggerState.SetWeapon(_equipedWeaponController);
+            _equipingWeaponState.SetWeapon(_equipedWeaponController);
 
             Transit(_equipingWeaponState);
 
@@ -80,10 +92,10 @@ namespace WeaponSystem
 
         public void RemoveWeapon()
         {
-            if (_weaponController != null)
+            if (_equipedWeaponController != null)
             {
-                _weaponController.OnMagazineLoadChanged -= InvokeOnMagazineLoadChanged;
-                _weaponController = null;
+                _equipedWeaponController.OnMagazineLoadChanged -= InvokeOnMagazineLoadChanged;
+                _equipedWeaponController = null;
             }
 
             if (_ammunitionItemProvider != null)
@@ -94,6 +106,8 @@ namespace WeaponSystem
 
             Transit(_noWeaponState);
             OnWeaponHolstered?.Invoke();
+
+            //Debug.Log($"Unequip weapon");
         }
 
         public void PullWeaponTrigger()
@@ -106,15 +120,15 @@ namespace WeaponSystem
 
         public void ReleaseWeaponTrigger()
         {
-            if (_weaponController == null) { return; }
+            if (_equipedWeaponController == null) { return; }
 
             Transit(_holdingWeaponState);
 
-            if (_weaponController.MagazineLoad <= 0)
+            if (_equipedWeaponController.MagazineLoad <= 0)
             {
                 ReloadWeapon();
             }
-            else if (!_weaponController.IsRecharged && _weaponController.CanBeManuallyRecharged)
+            else if (!_equipedWeaponController.IsRecharged && _equipedWeaponController.CanBeManuallyRecharged)
             {
                 RechargeWeapon();
             }

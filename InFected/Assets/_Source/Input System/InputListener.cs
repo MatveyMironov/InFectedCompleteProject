@@ -16,8 +16,7 @@ namespace Core
         private readonly PlayerMovementController _playerMovementController;
         private readonly InventoryMenuController _inventoryMenuController;
         private readonly TimePauseMenuController _keyBankMenuController;
-        private readonly WeaponSelectorController _weaponEquiperController;
-        private readonly WeaponUserController _weaponUserController;
+        private readonly WeaponSelector _weaponEquiperController;
         private readonly InteractionController _interactionController;
         private readonly HealingController _healingController;
         private readonly GamePauseController _pauseController;
@@ -25,8 +24,7 @@ namespace Core
         public InputListener(PlayerMovementController playerMovementController,
                              InventoryMenuController inventoryMenuController,
                              TimePauseMenuController keyBankMenuController,
-                             WeaponSelectorController weaponEquiperController,
-                             WeaponUserController weaponUserController,
+                             WeaponSelector weaponEquiperController,
                              InteractionController interactionController,
                              HealingController healingController,
                              GamePauseController pauseController)
@@ -35,7 +33,6 @@ namespace Core
             _inventoryMenuController = inventoryMenuController;
             _keyBankMenuController = keyBankMenuController;
             _weaponEquiperController = weaponEquiperController;
-            _weaponUserController = weaponUserController;
             _interactionController = interactionController;
             _healingController = healingController;
             _pauseController = pauseController;
@@ -52,11 +49,6 @@ namespace Core
         private void OnHealInput(InputAction.CallbackContext context)
         {
             _healingController.Heal();
-        }
-
-        private void OnReloadInput(InputAction.CallbackContext context)
-        {
-            _weaponUserController.Reload();
         }
 
         private void OnInteractInput(InputAction.CallbackContext context)

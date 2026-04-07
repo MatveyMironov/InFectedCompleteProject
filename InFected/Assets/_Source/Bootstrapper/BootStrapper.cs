@@ -23,7 +23,6 @@ namespace Core
         [SerializeField] private float equipingTime;
         [SerializeField] private float baseReloadingTime;
         [SerializeField] private float baseRechargingTime;
-        [SerializeField] private WeaponUI weaponUI;
 
         [Header("Health")]
         [SerializeField] private int maxHealth;
@@ -65,13 +64,6 @@ namespace Core
             TimePause timePause = new();
 
             _inventory = new(inventorySize);
-
-            WeaponUser weaponUser = new(_inventory, baseReloadingTime, baseRechargingTime, equipingTime);
-            WeaponUserController weaponUserController = new(weaponUser);
-            WeaponUIController weaponUIController = new(weaponUI, weaponUser);
-
-            WeaponSelector weaponEquiper = new(_inventory, weaponBody, weaponUser);
-            WeaponSelectorController weaponEquiperController = new(weaponEquiper);
 
             Health playerHealth = new(maxHealth, maxHealth);
 
