@@ -10,7 +10,7 @@ namespace WeaponSystem
 
         public override void Enter()
         {
-            Debug.Log("no weapon");
+            //Debug.Log("no weapon");
         }
 
         public override void Exit()

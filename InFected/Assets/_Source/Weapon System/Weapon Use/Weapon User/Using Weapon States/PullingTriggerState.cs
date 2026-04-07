@@ -12,7 +12,7 @@ namespace WeaponSystem
 
         public override void Enter()
         {
-            Debug.Log("pulling trigger");
+            //Debug.Log("pulling trigger");
 
             _weaponController.PullTheTrigger();
         }

@@ -30,7 +30,7 @@ namespace WeaponSystem
 
         public override void Enter()
         {
-            Debug.Log("reloading weapon");
+            //Debug.Log("reloading weapon");
 
             LoadAmmunition();
         }
@@ -61,11 +61,9 @@ namespace WeaponSystem
 
         private void FinishOrContinue()
         {
-            Debug.Log(_weaponController.MagazineMaxAcceptedReload);
-            Debug.Log(AvailableAmmunition);
-            Debug.Log(_weaponController.MagazineMaxAcceptedReload > 0);
-            Debug.Log(AvailableAmmunition > 0);
-            Debug.Log(_weaponController.MagazineMaxAcceptedReload > 0 && AvailableAmmunition > 0);
+            //Debug.Log($"Magazine max accepted reload: {_weaponController.MagazineMaxAcceptedReload}"
+            //    + $" / Available ammunition: {AvailableAmmunition}"
+            //    + $" / {((_weaponController.MagazineMaxAcceptedReload > 0 && AvailableAmmunition > 0) ? "Will load ammunition" : "Unaible to load ammunition")}");
 
             if (_weaponController.MagazineMaxAcceptedReload > 0 && AvailableAmmunition > 0)
             {

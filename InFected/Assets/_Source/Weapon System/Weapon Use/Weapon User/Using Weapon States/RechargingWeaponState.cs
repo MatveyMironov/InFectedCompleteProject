@@ -23,7 +23,7 @@ namespace WeaponSystem
 
         public override void Enter()
         {
-            Debug.Log("recharging weapon");
+            //Debug.Log("recharging weapon");
 
             if (_recharging != null) { return; }
 

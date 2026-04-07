@@ -12,7 +12,7 @@ namespace WeaponSystem
 
         public override void Enter()
         {
-            Debug.Log("holding weapon");
+            //Debug.Log("holding weapon");
         }
 
         public override void Exit()

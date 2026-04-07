@@ -24,7 +24,7 @@ namespace WeaponSystem
 
         public override void Enter()
         {
-            Debug.Log("equiping weapon");
+            //Debug.Log("equiping weapon");
 
             if (_equiping != null) { return; }
 
