@@ -10,6 +10,10 @@ namespace WeaponSystem
         [SerializeField] private WeaponBody weaponBody;
         [SerializeField] private WeaponUser _weaponUser;
 
+        [Space]
+        [SerializeField] private WeaponDataSO defaultWeaponData;
+        public Weapon DefaultWeapon { get; private set; }
+
         private Inventory _inventory;
 
         private readonly List<WeaponItem> _availableWeaponItems = new();
@@ -21,9 +25,15 @@ namespace WeaponSystem
         private void Awake()
         {
             _inventory = inventorySO.Inventory;
-
             _inventory.OnItemAdded += AddWeaponItem;
             _inventory.OnItemRemoved += RemoveWeaponItem;
+
+            DefaultWeapon = defaultWeaponData.Weapon;
+        }
+
+        private void Start()
+        {
+            SelectDefaultWeapon();
         }
 
         private void OnDestroy()
@@ -36,7 +46,8 @@ namespace WeaponSystem
         {
             if (SelectedWeaponIndex >= AvailableWeaponItemsCount - 1)
             {
-                SelectWeapon(0);
+                //SelectWeapon(0);
+                SelectDefaultWeapon();
             }
             else
             {
@@ -46,8 +57,14 @@ namespace WeaponSystem
 
         public void SelectPreviousWeapon()
         {
-            if (SelectedWeaponIndex <= 0)
+            if (SelectedWeaponIndex < 1)
             {
+                if (SelectedWeaponIndex == 0)
+                {
+                    SelectDefaultWeapon();
+                    return;
+                }
+
                 SelectWeapon(AvailableWeaponItemsCount - 1);
             }
             else
@@ -62,10 +79,7 @@ namespace WeaponSystem
 
             WeaponItem weaponItem = _availableWeaponItems[weaponIndex];
             Weapon weapon = weaponItem.Weapon;
-            WeaponController weaponUseController = new(weapon, weaponBody);
-
-            _weaponUser.EquipWeapon(weaponUseController);
-
+            EquipWeapon(weapon);
             SelectedWeaponIndex = weaponIndex;
             SelectedWeaponItem = weaponItem;
         }
@@ -76,9 +90,9 @@ namespace WeaponSystem
             {
                 _availableWeaponItems.Add(weaponItem);
 
-                if (AvailableWeaponItemsCount == 1)
+                if (AvailableWeaponItemsCount < 1)
                 {
-                    SelectWeapon(0);
+                    SelectDefaultWeapon();
                 }
             }
         }
@@ -96,13 +110,21 @@ namespace WeaponSystem
                     SelectedWeaponItem = null;
                     SelectedWeaponIndex = -1;
                     //Debug.Log($"Deselect {weaponItem}");
-
-                    if (AvailableWeaponItemsCount > 0)
-                    {
-                        SelectWeapon(0);
-                    }
+                    SelectDefaultWeapon();
                 }
             }
+        }
+
+        private void SelectDefaultWeapon()
+        {
+            EquipWeapon(DefaultWeapon);
+            SelectedWeaponIndex = -1;
+        }
+
+        private void EquipWeapon(Weapon weapon)
+        {
+            WeaponController weaponUseController = new(weapon, weaponBody);
+            _weaponUser.EquipWeapon(weaponUseController);
         }
     }
 }

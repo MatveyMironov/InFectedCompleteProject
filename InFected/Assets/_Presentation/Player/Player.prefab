@@ -907,6 +907,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8720695642265000139}
     m_Modifications:
+    - target: {fileID: 1233464229218067672, guid: 73e9a9f41d182b644b7678c44cfa988d, type: 3}
+      propertyPath: defaultWeaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: e47e02b0d5089e5449d0cd138515da62, type: 2}
     - target: {fileID: 2042493575148295771, guid: 73e9a9f41d182b644b7678c44cfa988d, type: 3}
       propertyPath: m_Name
       value: Weapon
