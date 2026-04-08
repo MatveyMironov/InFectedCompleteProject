@@ -9,22 +9,26 @@ namespace InputActionListenerSystem
         [SerializeField] private InputActionReference inputAction;
         [SerializeField] private UnityEvent unityEvent;
 
+        private void Start()
+        {
+            inputAction.action.Enable();
+        }
+
         private void OnEnable()
         {
+            //Debug.Log($"Input action listener on {gameObject.name} enabled");
             inputAction.action.performed += InvokeEvent;
-
-            inputAction.action.Enable();
         }
 
         private void OnDisable()
         {
+            //Debug.Log($"Input action listener on {gameObject.name} disabled");
             inputAction.action.performed -= InvokeEvent;
-
-            inputAction.action.Disable();
         }
 
         private void InvokeEvent(InputAction.CallbackContext context)
         {
+            //Debug.Log($"Input {inputAction.action.name} recieved by {gameObject.name}");
             unityEvent.Invoke();
         }
     }
