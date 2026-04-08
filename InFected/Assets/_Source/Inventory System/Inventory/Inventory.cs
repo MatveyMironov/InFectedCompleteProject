@@ -35,7 +35,7 @@ namespace InventorySystem
                 return true;
             }
 
-            return true;
+            return false;
         }
 
         public bool TryRemoveItemAt(Vector2Int cell, out Item removedItem)

@@ -56,12 +56,12 @@ namespace InventorySystem
                         InventoryCellUI cellUI = Instantiate(UICellPrefab, cellsContent);
                         _cellUIsDictionary.Add(cell, cellUI);
 
-                        cellUI.OnItemPlaceRequested += TryAddItemUIToThisCell;
+                        cellUI.OnItemPlaceRequested += TryPlaceUIInThisCell;
                         cellUI.OnItemRemoveRequested += RemoveItemUI;
 
-                        bool TryAddItemUIToThisCell(ItemUI itemUI)
+                        bool TryPlaceUIInThisCell(ItemUI itemUI)
                         {
-                            return TryAddItemUI(itemUI, cell);
+                            return TryPlaceItemUI(itemUI, cell);
                         } 
                     }
                 }
@@ -118,15 +118,19 @@ namespace InventorySystem
             }
         }
 
-        private bool TryAddItemUI(ItemUI itemUI, Vector2Int cell)
+        private bool TryPlaceItemUI(ItemUI itemUI, Vector2Int cell)
         {
+            //Debug.Log($"Trying to place '{itemUI}' at '{cell}'");
+
             if (_displayedInventory.TryPlaceItemAt(itemUI.Item, cell))
             {
+                //Debug.Log($"'{itemUI}' successfully placed at '{cell}'");
                 _itemUIs.Add(itemUI);
                 itemUI.OnItemUIDestroyed += RemoveItemUI;
                 return true;
             }
 
+            //Debug.Log($"Failed to place '{itemUI}' at '{cell}'");
             return false;
         }
 
