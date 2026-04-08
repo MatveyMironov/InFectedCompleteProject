@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 79fe4d19c14535343b1d0832c6488179, type: 2}
-  healthDisplayer: {fileID: 5899652744663073618}
+  healthDisplayer: {fileID: 6860889132012711244}
   gettingHitSource: {fileID: 4943227605023519752}
   perceptionReferences:
     <Perciever>k__BackingField: {fileID: 6920822184144963678}
@@ -642,15 +642,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95d9cfe1c145ece4b954012cec667491, type: 3}
---- !u!114 &5899652744663073618 stripped
+--- !u!114 &6860889132012711244 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2193123323857304580, guid: 95d9cfe1c145ece4b954012cec667491, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1190791650207257114, guid: 95d9cfe1c145ece4b954012cec667491, type: 3}
   m_PrefabInstance: {fileID: 5742174061747666774}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cabd55e493cc8c343ad073e0b0914061, type: 3}
+  m_Script: {fileID: 11500000, guid: bf24a8481740a0b42b73a385589638d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &8671205211348659173 stripped

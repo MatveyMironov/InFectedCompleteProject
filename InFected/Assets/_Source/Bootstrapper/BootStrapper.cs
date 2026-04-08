@@ -50,16 +50,9 @@ namespace Core
         {
             _inventory = new(inventorySize);
 
-            Health playerHealth = new(maxHealth, maxHealth);
-
-            PlayerHealthController playerHealthController = new(player, playerHealth);
-            HealthDisplayerController playerHealthDisplayerController = new(playerHealth, healthDisplayer);
-
-            PlayerDeathController playerDeathController = new(playerHealth);
-
             ItemsOfSameTypeProvider<HealingItem> healingItemsProvider = new(_inventory);
-            Healing healing = new(playerHealth, healingItemsProvider);
-            HealingController healingController = new(healing);
+            //Healing healing = new(playerHealth, healingItemsProvider);
+            //HealingController healingController = new(healing);
             HealingItemUIController healingItemUIController = new(healingItemUI, healingItemsProvider);
         }
 

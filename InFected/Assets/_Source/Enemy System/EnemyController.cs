@@ -11,7 +11,7 @@ namespace Enemy
         [SerializeField] private EnemyDataSO enemyData;
 
         [Header("Health")]
-        [SerializeField] private LoadCapacityDisplayer healthDisplayer;
+        [SerializeField] private HealthDisplayerMB healthDisplayer;
 
         [Header("Hit Effects")]
         [SerializeField] private AudioSource gettingHitSource;
@@ -44,9 +44,10 @@ namespace Enemy
 
         private void Awake()
         {
-            _health = new(enemyData.MaxHealth, enemyData.MaxHealth);
+            _health = new(enemyData.MaxHealth);
             _health.OnHealthExpired += Death;
-            HealthDisplayerController healthDisplayerController = new(_health, healthDisplayer);
+            _health.CurrentHealth = enemyData.MaxHealth;
+            healthDisplayer.DisplayHealth(_health);
 
             _perception = new(perceptionReferences, enemyData.PerceptionParameters);
             _movement = new(agent, animator, enemyData.MovementParameters);

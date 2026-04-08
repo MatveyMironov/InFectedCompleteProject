@@ -4,20 +4,17 @@ namespace HealthSystem
 {
     public class Health
     {
-        private int _maxHealth;
-        private int _currentHealth;
-
-        public Health(int maxHealth, int currentHealth)
+        public Health(int maxHealth)
         {
-            _maxHealth = maxHealth;
-            _currentHealth = currentHealth;
-            OnHealthChanged?.Invoke(CurrentHealth);
+            MaxHealth = maxHealth;
         }
 
-        public int MaxHealth { get { return _maxHealth; } }
-        public int CurrentHealth { get { return _currentHealth; } set { ChangeHealth(value); } }
+        private int _currentHealth;
 
-        public event Action<int> OnHealthChanged;
+        public int MaxHealth { get; }
+        public int CurrentHealth { get => _currentHealth; set => ChangeHealth(value); }
+
+        public event Action OnHealthChanged;
         public event Action OnHealthExpired;
 
         private void ChangeHealth(int newHealth)
@@ -27,13 +24,13 @@ namespace HealthSystem
                 newHealth = 0;
             }
 
-            if (newHealth > _maxHealth)
+            if (newHealth > MaxHealth)
             {
-                newHealth = _maxHealth;
+                newHealth = MaxHealth;
             }
 
             _currentHealth = newHealth;
-            OnHealthChanged?.Invoke(CurrentHealth);
+            OnHealthChanged?.Invoke();
 
             if (CurrentHealth == 0)
             {
