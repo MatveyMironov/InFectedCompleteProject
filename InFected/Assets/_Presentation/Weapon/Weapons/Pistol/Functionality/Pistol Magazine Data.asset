@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
     <AmmunitionType>k__BackingField: {fileID: 11400000, guid: 29b74b744d717a245b688925f40a86fc, type: 2}
-    <Capacity>k__BackingField: 15
+    <Capacity>k__BackingField: 10

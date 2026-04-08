@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Pistol Cartridge
   description: 9 mm rounds, used by most pistols
-  maxCount: 15
+  maxCount: 10
   size: {x: 1, y: 2}
   itemUIPrefab: {fileID: 2334047792449161400, guid: ff0ab7122f1e30c4cafec59a0930abd9, type: 3}

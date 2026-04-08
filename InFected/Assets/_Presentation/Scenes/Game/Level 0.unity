@@ -978,7 +978,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8326324252989869690, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: This is armory. Maybe I can find some ammo here...
+      value: Armory. Weapons and ammo are kept here. This means of course, that the
+        door is usually locked.
       objectReference: {fileID: 0}
     - target: {fileID: 8326324252989869690, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1206,11 +1207,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.71
+      value: 60.5
       objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -51.11
+      value: -51
       objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1274,8 +1275,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8326324252989869690, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: This room was used to store first aid kits. Maybe I can still find some
-        left.
+      value: Looks like another storage room. But this one was used for medical suplies.
+        Should be some left.
       objectReference: {fileID: 0}
     - target: {fileID: 8326324252989869690, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -4354,7 +4355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8326324252989869690, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: I don't have enough ammo to kill all of them. But they seem unaible
+      value: To many enemies ahead. I don't have enough ammo. But they seem unaible
         to run fast... (press [Shift] to sprint while depliting stamina)
       objectReference: {fileID: 0}
     - target: {fileID: 8326324252989869690, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
@@ -5055,10 +5056,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1085247415}
   - {fileID: 2026465405}
   - {fileID: 1543562383}
-  - {fileID: 1707628840}
   m_Father: {fileID: 290146498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1048732191
@@ -5125,11 +5124,6 @@ Transform:
   - {fileID: 1854678042}
   m_Father: {fileID: 1708785995}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1085247415 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-  m_PrefabInstance: {fileID: 1761346752}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1095795485
 GameObject:
   m_ObjectHideFlags: 0
@@ -7010,7 +7004,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1710136145368162601, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: m_Name
-      value: Locker (3)
+      value: Locker
       objectReference: {fileID: 0}
     - target: {fileID: 4306079210547249423, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7075,14 +7069,14 @@ PrefabInstance:
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[2].<Item>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: 55653f450bdf353448095b3a5f5fa33c, type: 2}
+      objectReference: {fileID: 11400000, guid: 29b74b744d717a245b688925f40a86fc, type: 2}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[3].<Item>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: de755a7f3dfa6324a8abee7cf19b038a, type: 2}
+      objectReference: {fileID: 11400000, guid: a14f741aa1447d748b15e300eb3f68d0, type: 2}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[0].<Count>k__BackingField
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[1].<Count>k__BackingField
@@ -7090,39 +7084,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[2].<Count>k__BackingField
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[3].<Count>k__BackingField
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[0].<PlacementOrigin>k__BackingField.x
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[0].<PlacementOrigin>k__BackingField.y
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
+      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<PlacementOrigin>k__BackingField.x
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[1].<PlacementOrigin>k__BackingField.y
-      value: 8
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
+      propertyPath: inventoryFiller.itemPlacements.Array.data[2].<PlacementOrigin>k__BackingField.x
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[2].<PlacementOrigin>k__BackingField.y
-      value: 0
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
+      propertyPath: inventoryFiller.itemPlacements.Array.data[3].<PlacementOrigin>k__BackingField.x
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[3].<PlacementOrigin>k__BackingField.y
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.7
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.07
+      value: -58.5
       objectReference: {fileID: 0}
     - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7556,7 +7562,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8326324252989869690, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: This door is locked. Maybe this key-card on the floor can open it?
+      value: This door leads to the main lab. But it needs a key-card to open. Maybe
+        I can find one somewhere nearby.
       objectReference: {fileID: 0}
     - target: {fileID: 8326324252989869690, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7914,256 +7921,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3251968252242117333, guid: ac5907d8b2a56624d88eb76aa563b08f, type: 3}
   m_PrefabInstance: {fileID: 1669482677}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1707628839
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1035834174}
-    m_Modifications:
-    - target: {fileID: 1710136145368162601, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_Name
-      value: Locker (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4306079210547249423, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4306079210547249423, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4306079210547249423, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4306079210547249423, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4306079210547249423, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[0].<Count>k__BackingField
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[1].<Count>k__BackingField
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[2].<Count>k__BackingField
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[3].<Count>k__BackingField
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[4].<Count>k__BackingField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[0].<ItemData>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 29b74b744d717a245b688925f40a86fc, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[1].<ItemData>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 29b74b744d717a245b688925f40a86fc, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[2].<ItemData>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 29b74b744d717a245b688925f40a86fc, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[3].<ItemData>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 29b74b744d717a245b688925f40a86fc, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[4].<ItemData>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: a14f741aa1447d748b15e300eb3f68d0, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[0].<PlacementOrigin>k__BackingField.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[0].<PlacementOrigin>k__BackingField.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[1].<PlacementOrigin>k__BackingField.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[1].<PlacementOrigin>k__BackingField.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[2].<PlacementOrigin>k__BackingField.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[2].<PlacementOrigin>k__BackingField.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[3].<PlacementOrigin>k__BackingField.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[3].<PlacementOrigin>k__BackingField.y
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[4].<PlacementOrigin>k__BackingField.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[4].<PlacementOrigin>k__BackingField.y
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[0].<Item>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 29b74b744d717a245b688925f40a86fc, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<Item>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 29b74b744d717a245b688925f40a86fc, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[2].<Item>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 29b74b744d717a245b688925f40a86fc, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[3].<Item>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 29b74b744d717a245b688925f40a86fc, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[4].<Item>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: a14f741aa1447d748b15e300eb3f68d0, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[0].<Count>k__BackingField
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<Count>k__BackingField
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[2].<Count>k__BackingField
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[3].<Count>k__BackingField
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[4].<Count>k__BackingField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[0].<PlacementOrigin>k__BackingField.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[0].<PlacementOrigin>k__BackingField.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<PlacementOrigin>k__BackingField.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<PlacementOrigin>k__BackingField.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[2].<PlacementOrigin>k__BackingField.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[2].<PlacementOrigin>k__BackingField.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[3].<PlacementOrigin>k__BackingField.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[3].<PlacementOrigin>k__BackingField.y
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[4].<PlacementOrigin>k__BackingField.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[4].<PlacementOrigin>k__BackingField.y
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 52.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -58.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
---- !u!4 &1707628840 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-  m_PrefabInstance: {fileID: 1707628839}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1708785994
 GameObject:
   m_ObjectHideFlags: 0
@@ -8477,223 +8234,6 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!1001 &1761346752
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1035834174}
-    m_Modifications:
-    - target: {fileID: 1710136145368162601, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_Name
-      value: Locker
-      objectReference: {fileID: 0}
-    - target: {fileID: 4306079210547249423, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4306079210547249423, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4306079210547249423, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4306079210547249423, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4306079210547249423, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[0].<Count>k__BackingField
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[1].<Count>k__BackingField
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[0].<ItemData>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 55653f450bdf353448095b3a5f5fa33c, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[1].<ItemData>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 29b74b744d717a245b688925f40a86fc, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[1].<PlacementOrigin>k__BackingField.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: itemsPlacement.Array.data[1].<PlacementOrigin>k__BackingField.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[0].<Item>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 542dff99d299ced40b0c6bf2d6a8537a, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<Item>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 8963847abedcc5443bd7dd39a6b9370e, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[2].<Item>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 8963847abedcc5443bd7dd39a6b9370e, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[3].<Item>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 8963847abedcc5443bd7dd39a6b9370e, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[4].<Item>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 8963847abedcc5443bd7dd39a6b9370e, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[5].<Item>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 8963847abedcc5443bd7dd39a6b9370e, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[6].<Item>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 8963847abedcc5443bd7dd39a6b9370e, type: 2}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[0].<Count>k__BackingField
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<Count>k__BackingField
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[2].<Count>k__BackingField
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[3].<Count>k__BackingField
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[4].<Count>k__BackingField
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[5].<Count>k__BackingField
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[6].<Count>k__BackingField
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[0].<PlacementOrigin>k__BackingField.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[0].<PlacementOrigin>k__BackingField.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<PlacementOrigin>k__BackingField.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[2].<PlacementOrigin>k__BackingField.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[2].<PlacementOrigin>k__BackingField.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[3].<PlacementOrigin>k__BackingField.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[3].<PlacementOrigin>k__BackingField.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[4].<PlacementOrigin>k__BackingField.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[4].<PlacementOrigin>k__BackingField.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[5].<PlacementOrigin>k__BackingField.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[5].<PlacementOrigin>k__BackingField.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[6].<PlacementOrigin>k__BackingField.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[6].<PlacementOrigin>k__BackingField.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
 --- !u!1 &1786369745
 GameObject:
   m_ObjectHideFlags: 0
@@ -9868,7 +9408,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1710136145368162601, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: m_Name
-      value: Locker (2)
+      value: Armory Locker
       objectReference: {fileID: 0}
     - target: {fileID: 4306079210547249423, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9896,7 +9436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: itemsPlacement.Array.data[0].<Count>k__BackingField
@@ -9933,22 +9473,22 @@ PrefabInstance:
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[2].<Item>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: 55653f450bdf353448095b3a5f5fa33c, type: 2}
+      objectReference: {fileID: 11400000, guid: 29b74b744d717a245b688925f40a86fc, type: 2}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[3].<Item>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: de755a7f3dfa6324a8abee7cf19b038a, type: 2}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[0].<Count>k__BackingField
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<Count>k__BackingField
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
+      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<Count>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[2].<Count>k__BackingField
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[3].<Count>k__BackingField
@@ -9956,19 +9496,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[0].<PlacementOrigin>k__BackingField.x
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[0].<PlacementOrigin>k__BackingField.y
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
-      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<PlacementOrigin>k__BackingField.y
+      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<PlacementOrigin>k__BackingField.x
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
+      propertyPath: inventoryFiller.itemPlacements.Array.data[1].<PlacementOrigin>k__BackingField.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
+      propertyPath: inventoryFiller.itemPlacements.Array.data[2].<PlacementOrigin>k__BackingField.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[2].<PlacementOrigin>k__BackingField.y
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4905446394919324498, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: inventoryFiller.itemPlacements.Array.data[3].<PlacementOrigin>k__BackingField.y
@@ -9976,11 +9524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.91
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.04
+      value: -66
       objectReference: {fileID: 0}
     - target: {fileID: 9134190892790565834, guid: 82d7ccef5b518db4f83d0403728772bd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11055,8 +10603,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8326324252989869690, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: They don't look friendly. And I don't have any ammo left. But armory
-        should be nearby.
+      value: Infected people are very agressive. And I spent all my ammo on the way
+        to this labs. I am lucky that armory is nearby.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

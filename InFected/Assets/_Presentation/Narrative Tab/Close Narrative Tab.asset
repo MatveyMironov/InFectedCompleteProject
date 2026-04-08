@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56692249a1c0c79458fd9ed55ff0fe4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 125250ebb7c42ac43beaa172910dd7d5, type: 3}
   m_Name: Close Narrative Tab
   m_EditorClassIdentifier: 

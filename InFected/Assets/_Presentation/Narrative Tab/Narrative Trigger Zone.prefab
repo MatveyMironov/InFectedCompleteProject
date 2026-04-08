@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2401285386313273723, guid: df5c88190f0ba4a4ca762986ea9803c6, type: 3}
       propertyPath: m_Name
-      value: Narrative Trigger Zone Variant
+      value: Narrative Trigger Zone
       objectReference: {fileID: 0}
     - target: {fileID: 2605863128095731330, guid: df5c88190f0ba4a4ca762986ea9803c6, type: 3}
       propertyPath: m_Radius
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7808824714625295144, guid: df5c88190f0ba4a4ca762986ea9803c6, type: 3}
       propertyPath: OnTriggerExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7808824714625295144, guid: df5c88190f0ba4a4ca762986ea9803c6, type: 3}
       propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7808824714625295144, guid: df5c88190f0ba4a4ca762986ea9803c6, type: 3}
       propertyPath: OnTriggerExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameEventSystem.AGameEvent`1[[System.String, mscorlib
+      value: GameEventSystem.GameEventSO, GameEventSystem
       objectReference: {fileID: 0}
     - target: {fileID: 7808824714625295144, guid: df5c88190f0ba4a4ca762986ea9803c6, type: 3}
       propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
