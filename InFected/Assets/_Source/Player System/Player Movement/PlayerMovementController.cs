@@ -172,12 +172,12 @@ namespace PlayerSystem
 
         private void UseStamina()
         {
-            Debug.Log("Use stamina");
+            //Debug.Log("Use stamina");
             staminaController.AvailableStamina -= Time.deltaTime * staminaUseRate;
 
             if (staminaController.AvailableStamina <= 0)
             {
-                Debug.Log("No stamina left");
+                //Debug.Log("No stamina left");
                 _isSprinting = false;
             }
         }
