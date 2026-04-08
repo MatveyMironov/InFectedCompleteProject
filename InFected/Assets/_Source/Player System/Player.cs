@@ -6,8 +6,12 @@ namespace PlayerSystem
 {
     public class Player : MonoBehaviour, IHitable
     {
+        [Header("Effects")]
+        [SerializeField] private AudioSource effectsAudioSource;
+
         [Header("Hit Effects")]
-        [SerializeField] private AudioSource gettingHitSource;
+        [SerializeField] private AudioClip hitAudioClip;
+        [SerializeField] private float hitClipVolumeVariation;
 
         [Header("Health")]
         [SerializeField] private int maxHealth;
@@ -36,9 +40,14 @@ namespace PlayerSystem
 
         public void Hit(int damage, Vector3 from)
         {
-            gettingHitSource.Play();
-
+            PlayHitAudioClip();
             _health.CurrentHealth -= damage;
+
+            void PlayHitAudioClip()
+            {
+                float clipVolumeScale = Random.value + 1.0f - hitClipVolumeVariation;
+                effectsAudioSource.PlayOneShot(hitAudioClip, clipVolumeScale);
+            }
         }
 
         private void InvokeOnHealthChanged()
