@@ -1,17 +1,46 @@
+using HealthSystem;
+using InventorySystem;
+using PlayerSystem;
+using UnityEngine;
+
 namespace HealingSystem
 {
-    public class HealingController
+    public class HealingController : MonoBehaviour
     {
-        private Healing _healing;
+        [Header("Healing Item")]
+        [SerializeField] private ItemDataSO healingItem;
+        [SerializeField] private int restoredHealth;
 
-        public HealingController(Healing healing)
+        [Space]
+        [SerializeField] private Player player;
+
+        [Space]
+        [SerializeField] private InventorySO inventorySO;
+
+        private Health _health;
+        private Inventory _inventory;
+
+        private void Awake()
         {
-            _healing = healing;
+            _inventory = inventorySO.Inventory;
         }
 
-        public void Heal()
+        private void Start()
         {
-            _healing.TryHeal();
+            _health = player.Health;
+        }
+
+        public void HealIfPossible()
+        {
+            if (_health.CurrentHealth >= _health.MaxHealth) { return; }
+
+            if (_inventory.TryGetItemOfKind(healingItem, out Item item))
+            {
+                if (item.Count <= 0) { return; }
+
+                item.Count -= 1;
+                _health.CurrentHealth += restoredHealth;
+            }
         }
     }
 }

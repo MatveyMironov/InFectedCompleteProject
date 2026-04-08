@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90856c61740c75a4d875e8d59eff7696, type: 3}
+  m_Script: {fileID: 11500000, guid: 414cd377878994e48bafef252230ad99, type: 3}
   m_Name: FirstAidKit
   m_EditorClassIdentifier: 
   itemName: First Aid Kit
@@ -17,4 +17,3 @@ MonoBehaviour:
   maxCount: 5
   size: {x: 3, y: 3}
   itemUIPrefab: {fileID: 1926230217069107943, guid: 7ae9111f708389a4893e9fb1a24487bb, type: 3}
-  restoredHealth: 50

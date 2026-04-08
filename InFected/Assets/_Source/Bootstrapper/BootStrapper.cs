@@ -26,9 +26,6 @@ namespace Core
         [SerializeField] private int maxHealth;
         [SerializeField] private LoadCapacityDisplayer healthDisplayer;
 
-        [Header("Healing")]
-        [SerializeField] private HealingItemUI healingItemUI;
-
         [Header("Inventory")]
         [SerializeField] private Vector2Int inventorySize;
         [SerializeField] private HideableUI inventoryMenu;
@@ -48,12 +45,6 @@ namespace Core
 
         private void Awake()
         {
-            _inventory = new(inventorySize);
-
-            ItemsOfSameTypeProvider<HealingItem> healingItemsProvider = new(_inventory);
-            //Healing healing = new(playerHealth, healingItemsProvider);
-            //HealingController healingController = new(healing);
-            HealingItemUIController healingItemUIController = new(healingItemUI, healingItemsProvider);
         }
 
         private void Start()

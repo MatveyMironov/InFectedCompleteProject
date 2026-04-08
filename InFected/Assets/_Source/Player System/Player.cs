@@ -18,30 +18,29 @@ namespace PlayerSystem
         [SerializeField] private UnityEvent<float> OnHealthChanged;
         [SerializeField] private UnityEvent OnHealthExpired;
 
-        private Health _health;
-
+        public Health Health { get; private set; }
         public CircleCollider2D Collider { get; private set; }
 
         private void Awake()
         {
-            _health = new(maxHealth);
-            _health.OnHealthChanged += InvokeOnHealthChanged;
-            _health.OnHealthExpired += OnHealthExpired.Invoke;
-            _health.CurrentHealth = maxHealth;
+            Health = new(maxHealth);
+            Health.OnHealthChanged += InvokeOnHealthChanged;
+            Health.OnHealthExpired += OnHealthExpired.Invoke;
+            Health.CurrentHealth = maxHealth;
 
             Collider = GetComponent<CircleCollider2D>();
         }
 
         private void OnDestroy()
         {
-            _health.OnHealthChanged -= InvokeOnHealthChanged;
-            _health.OnHealthExpired -= OnHealthExpired.Invoke;
+            Health.OnHealthChanged -= InvokeOnHealthChanged;
+            Health.OnHealthExpired -= OnHealthExpired.Invoke;
         }
 
         public void Hit(int damage, Vector3 from)
         {
             PlayHitAudioClip();
-            _health.CurrentHealth -= damage;
+            Health.CurrentHealth -= damage;
 
             void PlayHitAudioClip()
             {
@@ -52,7 +51,7 @@ namespace PlayerSystem
 
         private void InvokeOnHealthChanged()
         {
-            float healthValue = (float)_health.CurrentHealth / _health.MaxHealth;
+            float healthValue = (float)Health.CurrentHealth / Health.MaxHealth;
             OnHealthChanged.Invoke(healthValue);
         }
     }
