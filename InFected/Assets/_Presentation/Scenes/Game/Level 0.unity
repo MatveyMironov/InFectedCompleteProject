@@ -4874,17 +4874,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 783226209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1069741072 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8519684091901644027, guid: 277d1e6ee18d8aa4292011563014fe27, type: 3}
-  m_PrefabInstance: {fileID: 8722874471312352777}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c48693956514b3240aca06d5f1dedadc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1078950703
 GameObject:
   m_ObjectHideFlags: 0
@@ -7258,10 +7247,6 @@ MonoBehaviour:
   keysCollector: {fileID: 8629892912600043873}
   keysDisplayer: {fileID: 922752043}
   interactionSource: {fileID: 6280132342051577255}
-  maxStamina: 100
-  staminaRecoveryDelay: 2
-  staminaRecoveryRate: 5
-  staminaUI: {fileID: 1069741072}
   gameStartMenu: {fileID: 1618042652}
   gameWinMenu: {fileID: 2138415330}
   gameLossMenu: {fileID: 1372248416}
@@ -11417,6 +11402,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9eccf11e4fe43a649be378cb87f025aa, type: 3}
+--- !u!114 &6280132342051577254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9106747024490507875, guid: 9eccf11e4fe43a649be378cb87f025aa, type: 3}
+  m_PrefabInstance: {fileID: 6280132342051577253}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e2ce6ceec749340865d45199e634f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &6280132342051577255 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3233402878281665460, guid: 9eccf11e4fe43a649be378cb87f025aa, type: 3}
@@ -11762,6 +11758,10 @@ PrefabInstance:
       propertyPath: weaponUser
       value: 
       objectReference: {fileID: 183530825}
+    - target: {fileID: 6628674245369798780, guid: 277d1e6ee18d8aa4292011563014fe27, type: 3}
+      propertyPath: staminaController
+      value: 
+      objectReference: {fileID: 6280132342051577254}
     - target: {fileID: 6881823876766748711, guid: 277d1e6ee18d8aa4292011563014fe27, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

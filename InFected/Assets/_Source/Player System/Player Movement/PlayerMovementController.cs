@@ -10,13 +10,14 @@ namespace PlayerSystem
 
         [Header("Parameters")]
         [SerializeField] private float maxWalkingSpeed;
-        [SerializeField] private float maxSprintingSpeed;
         [SerializeField] private float acceleration;
         [SerializeField] private float deceleration;
         [SerializeField] private float turningSpeed;
         [SerializeField] private bool turnInstantly;
 
-        [Header("Stamina")]
+        [Header("Sprinting")]
+        [SerializeField] private float maxSprintingSpeed;
+        [SerializeField] private StaminaController staminaController;
         [SerializeField] private float staminaUseRate;
 
         [Header("Animation")]
@@ -34,9 +35,6 @@ namespace PlayerSystem
         private Vector2 _movementDirection;
         private bool _isSprinting;
         private float _aimAngle;
-
-        private StaminaController _staminaController;
-        private float _staminaUseTimer = 0;
 
         private Movement _movement;
         private Turning _turning;
@@ -67,12 +65,6 @@ namespace PlayerSystem
 
         }
 
-        //!
-        public void Setup(StaminaController staminaController)
-        {
-            _staminaController = staminaController;
-        }
-
         public void Move(Vector2 movementDirection)
         {
             _movementDirection = movementDirection;
@@ -80,9 +72,16 @@ namespace PlayerSystem
 
         public void Sprint(bool isSprinting)
         {
-            if (_staminaController.AvailableStamina <= 0) return;
+            //Debug.Log("Sprint");
+
+            if (staminaController.AvailableStamina <= 0)
+            {
+                //Debug.Log("Unaible to sprint");
+                return;
+            }
 
             _isSprinting = isSprinting;
+            //Debug.Log("Is sprinting");
         }
 
         public void Aim(Vector2 aimPosition)
@@ -173,18 +172,13 @@ namespace PlayerSystem
 
         private void UseStamina()
         {
-            _staminaUseTimer += Time.deltaTime * staminaUseRate;
-            if (_staminaUseTimer >= 1)
+            Debug.Log("Use stamina");
+            staminaController.AvailableStamina -= Time.deltaTime * staminaUseRate;
+
+            if (staminaController.AvailableStamina <= 0)
             {
-                _staminaUseTimer -= 1;
-                _staminaController.AvailableStamina -= 1;
-                {
-                    if (_staminaController.AvailableStamina <= 0)
-                    {
-                        _staminaUseTimer = 0;
-                        _isSprinting = false;
-                    }
-                }
+                Debug.Log("No stamina left");
+                _isSprinting = false;
             }
         }
     }

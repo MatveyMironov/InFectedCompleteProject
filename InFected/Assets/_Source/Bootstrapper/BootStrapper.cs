@@ -43,12 +43,6 @@ namespace Core
         [Header("Interaction")]
         [SerializeField] private AudioSource interactionSource;
 
-        [Header("Sprint")]
-        [SerializeField] private int maxStamina;
-        [SerializeField] private float staminaRecoveryDelay;
-        [SerializeField] private float staminaRecoveryRate;
-        [SerializeField] private StaminaUI staminaUI;
-
         [Header("Game UI")]
         [SerializeField] private GameStartMenu gameStartMenu;
         [SerializeField] private GameWinMenu gameWinMenu;
@@ -71,10 +65,6 @@ namespace Core
             HealthDisplayerController playerHealthDisplayerController = new(playerHealth, healthDisplayer);
 
             PlayerDeathController playerDeathController = new(playerHealth);
-
-            StaminaController staminaController = new(maxStamina, staminaRecoveryDelay, staminaRecoveryRate);
-            StaminaUIController staminaUIController = new(staminaController, staminaUI);
-            playerMovement.Setup(staminaController);
 
             ItemsOfSameTypeProvider<HealingItem> healingItemsProvider = new(_inventory);
             Healing healing = new(playerHealth, healingItemsProvider);

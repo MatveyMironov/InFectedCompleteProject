@@ -1,65 +1,88 @@
 using System;
+using System.Collections;
+using UnityEngine;
 
 namespace SprintSystem
 {
-    public class StaminaController
+    public class StaminaController : MonoBehaviour
     {
-        private readonly PositiveIntegerParameter _stamina;
-        private readonly StaminaRecovery _staminaRecovery;
+        [SerializeField] private float staminaRecoveryDelay;
+        [SerializeField] private float staminaRecoveryRate;
 
-        public StaminaController(int maxStamina, float staminaRecoveryDelay, float staminaRecoveryRate)
-        {
-            _stamina = new(maxStamina);
-            _stamina.CurrentValue = maxStamina;
-
-            IsStaminaReady = true;
-
-            _stamina.OnValueChanged += InvokeOnStaminaChanged;
-            _stamina.OnValueExpired += BlockStamina;
-
-            _staminaRecovery = new(_stamina, staminaRecoveryDelay, staminaRecoveryRate);
-
-            _staminaRecovery.OnStaminaFullyRecovered += InvokeOnStaminaRecovered;
-            _staminaRecovery.OnStaminaFullyRecovered += UnblockStamina;
-        }
+        private Coroutine _recoveringStamina;
+        private Coroutine _delayStaminaRecovery;
 
         public bool IsStaminaReady { get; private set; }
-        public int CurrentStamina { get { return _stamina.CurrentValue; } }
-        public int MaxStamina { get { return _stamina.MaxValue; } }
-        public int AvailableStamina { get { return IsStaminaReady ? _stamina.CurrentValue : 0; } set { ChangeStamina(value); } }
+        public float CurrentStamina { get; private set; }
+        public float AvailableStamina { get => IsStaminaReady ? CurrentStamina : 0.0f; set => ChangeStamina(value); }
 
-        public event Action<int> OnStaminaChanged;
-        public event Action OnStaminaBlocked;
+        public event Action OnStaminaChanged;
         public event Action OnStaminaRecovered;
 
-        private void ChangeStamina(int newStamina)
-        {
-            if (newStamina < _stamina.CurrentValue)
-            {
-                _staminaRecovery.StopRecoverStamina();
-            }
-
-            _stamina.CurrentValue = newStamina;
-        }
-
-        private void BlockStamina()
-        {
-            IsStaminaReady = false;
-            OnStaminaBlocked?.Invoke();
-        }
-
-        private void UnblockStamina()
+        private void Awake()
         {
             IsStaminaReady = true;
+            CurrentStamina = 1.0f;
         }
 
-        private void InvokeOnStaminaChanged()
+        private void ChangeStamina(float value)
         {
-            OnStaminaChanged?.Invoke(CurrentStamina);
+            if (value < 0.0f) { value = 0.0f; }
+            if (value > 1.0f) { value = 1.0f; }
+
+            if (value < CurrentStamina)
+            {
+                StopRecoveringStamina();
+            }
+
+            CurrentStamina = value;
+            OnStaminaChanged?.Invoke();
         }
 
-        private void InvokeOnStaminaRecovered()
+        private void StartRecoveringStamina()
         {
+            if (_recoveringStamina != null) { return; }
+
+            if (_delayStaminaRecovery != null)
+            {
+                StopCoroutine(_delayStaminaRecovery);
+                _delayStaminaRecovery = null;
+            }
+
+            _recoveringStamina = StartCoroutine(RecoveringStamina());
+        }
+
+        private void StopRecoveringStamina()
+        {
+            if (_recoveringStamina != null)
+            {
+                StopCoroutine(_recoveringStamina);
+                _recoveringStamina = null;
+            }
+
+            if (_delayStaminaRecovery != null)
+            {
+                StopCoroutine(_delayStaminaRecovery);
+            }
+
+            _delayStaminaRecovery = StartCoroutine(DelayRecoveringStamina());
+        }
+
+        private IEnumerator DelayRecoveringStamina()
+        {
+            yield return new WaitForSeconds(staminaRecoveryDelay);
+            StartRecoveringStamina();
+        }
+
+        private IEnumerator RecoveringStamina()
+        {
+            while (CurrentStamina < 1.0f)
+            {
+                yield return null;
+                CurrentStamina = Mathf.MoveTowards(CurrentStamina, 1.0f, Time.deltaTime * staminaRecoveryRate);
+                OnStaminaChanged?.Invoke();
+            }
+
             OnStaminaRecovered?.Invoke();
         }
     }

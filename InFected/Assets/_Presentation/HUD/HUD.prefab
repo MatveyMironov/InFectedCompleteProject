@@ -489,6 +489,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5266105741239915840}
     m_Modifications:
+    - target: {fileID: 2701945490472122288, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701945490472122288, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701945490472122288, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701945490472122288, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701945490472122288, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701945490472122288, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4145669682736596035, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -567,6 +591,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4145669682736596035, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299701140382691411, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299701140382691411, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299701140382691411, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299701140382691411, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299701140382691411, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299701140382691411, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789796857685081836, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789796857685081836, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789796857685081836, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789796857685081836, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789796857685081836, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789796857685081836, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8509428159096669887, guid: ecaaa3268de3e044f8e420bcb212ca2b, type: 3}
@@ -677,7 +749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6459427664525910488, guid: 412d8a81014b5eb44b4db1f9885c8041, type: 3}
       propertyPath: m_Name
-      value: Stamina UI
+      value: Stamina Displayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

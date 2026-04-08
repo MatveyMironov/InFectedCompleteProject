@@ -395,6 +395,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1865682418322036897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1956375833735574525}
+  - component: {fileID: 9106747024490507875}
+  m_Layer: 8
+  m_Name: Stamina
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1956375833735574525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865682418322036897}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8720695642265000139}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9106747024490507875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865682418322036897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e2ce6ceec749340865d45199e634f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staminaRecoveryDelay: 2
+  staminaRecoveryRate: 0.2
 --- !u!1 &5054155244139555082
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +559,7 @@ Transform:
   - {fileID: 7216381331145368058}
   - {fileID: 2252612188887781672}
   - {fileID: 7695267757290695058}
+  - {fileID: 1956375833735574525}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &7428751485416605743
@@ -603,12 +650,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWalkingSpeed: 6
-  maxSprintingSpeed: 12
   acceleration: 24
   deceleration: 24
   turningSpeed: 0
   turnInstantly: 1
-  staminaUseRate: 10
+  maxSprintingSpeed: 12
+  staminaController: {fileID: 9106747024490507875}
+  staminaUseRate: 0.4
   animator: {fileID: 4146370342246445258}
   walkingThreshold: 1
   sprintingThreshold: 9
