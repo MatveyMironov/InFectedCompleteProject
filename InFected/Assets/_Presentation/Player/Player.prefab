@@ -637,6 +637,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gettingHitSource: {fileID: 7044083123938609876}
+  maxHealth: 100
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 882905863c6f3bd438aefca940619ed3, type: 2}
+        m_TargetAssemblyTypeName: GameEventSystem.AGameEvent`1[[System.Single, mscorlib
+        m_MethodName: Call
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHealthExpired:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5661353637638294556
 MonoBehaviour:
   m_ObjectHideFlags: 0
