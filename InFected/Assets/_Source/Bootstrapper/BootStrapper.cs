@@ -1,10 +1,8 @@
-using GameSystem;
 using HealingSystem;
 using HealthSystem;
 using InventorySystem;
 using KeySystem;
 using PlayerSystem;
-using SprintSystem;
 using UISystem;
 using UnityEngine;
 using WeaponSystem;
@@ -43,11 +41,6 @@ namespace Core
         [Header("Interaction")]
         [SerializeField] private AudioSource interactionSource;
 
-        [Header("Game UI")]
-        [SerializeField] private GameStartMenu gameStartMenu;
-        [SerializeField] private GameWinMenu gameWinMenu;
-        [SerializeField] private GameLossMenu gameLossMenu;
-
         [Space]
         [SerializeField] private SceneLoader nextLevelLoader;
 
@@ -55,8 +48,6 @@ namespace Core
 
         private void Awake()
         {
-            TimePause timePause = new();
-
             _inventory = new(inventorySize);
 
             Health playerHealth = new(maxHealth, maxHealth);
@@ -70,26 +61,6 @@ namespace Core
             Healing healing = new(playerHealth, healingItemsProvider);
             HealingController healingController = new(healing);
             HealingItemUIController healingItemUIController = new(healingItemUI, healingItemsProvider);
-
-            GamePause gamePause = new();
-            GamePauseController gamePauseController = new(gamePause);
-
-            LevelWin levelWin = new(timePause, gameWinMenu);
-            LevelWinController levelWinController = new(keysCollector, levelWin);
-
-            LevelTransitionController levelTransitionController = new(nextLevelLoader, gameWinMenu);
-
-            Remain remain = new(gameWinMenu, timePause);
-
-            LevelRetryController levelRetryController = new(gameLossMenu);
-
-            GameLoss gameLoss = new(timePause, gameLossMenu);
-            GameLossController gameLossController = new(playerDeathController, gameLoss);
-
-            GameStart gameStart = new(timePause, gameStartMenu);
-            GameStartController gameStartController = new(gameStart, gameStartMenu);
-
-            gameStart.Initialize();
         }
 
         private void Start()
