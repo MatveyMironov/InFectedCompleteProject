@@ -123,9 +123,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: ec264f979fb691f4bad83bf638299d9c, type: 2}
-        m_TargetAssemblyTypeName: GameEventSystem.AGameEvent`1[[System.Boolean, mscorlib
+        m_TargetAssemblyTypeName: GameEventSystem.GameEventSO, GameEventSystem
         m_MethodName: Call
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -206,10 +206,10 @@ MonoBehaviour:
   unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: ec264f979fb691f4bad83bf638299d9c, type: 2}
-        m_TargetAssemblyTypeName: GameEventSystem.AGameEvent`1[[System.Boolean, mscorlib
+      - m_Target: {fileID: 11400000, guid: a929e9ff0aff5ec458312a2251db6b46, type: 2}
+        m_TargetAssemblyTypeName: GameEventSystem.GameEventSO, GameEventSystem
         m_MethodName: Call
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
