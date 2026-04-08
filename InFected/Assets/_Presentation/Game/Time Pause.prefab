@@ -92,7 +92,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7393770623389910642}
         m_TargetAssemblyTypeName: GameSystem.TimePauseControllerMB, Assembly-CSharp
-        m_MethodName: Pause
+        m_MethodName: Unpause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
