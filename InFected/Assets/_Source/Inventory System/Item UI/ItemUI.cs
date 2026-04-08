@@ -22,35 +22,13 @@ namespace InventorySystem
 
         public event Action<ItemUI> OnItemUIDestroyed;
 
-        private void Start()
-        {
-            if (_currentCellUI == null) { return; }
-
-            OccupyCurrentCellUI();
-        }
-
         private void OnDestroy()
         {
             _item.OnItemCountChanged -= DisplayCount;
             _item.OnItemCountZero -= DestroyItemUI;
             _item.OnRotationChanged -= RotateItemUI;
 
-            InputListener.OnRotateItemInputRecieved -= RotateItem;
-
             OnItemUIDestroyed?.Invoke(this);
-        }
-
-        public void AssignItem(Item item)
-        {
-            _item = item;
-
-            _item.OnItemCountChanged += DisplayCount;
-            _item.OnItemCountZero += DestroyItemUI;
-            _item.OnRotationChanged += RotateItemUI;
-
-            InputListener.OnRotateItemInputRecieved += RotateItem;
-
-            DisplayCount(_item.Count);
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -84,8 +62,7 @@ namespace InventorySystem
                 ReturnToPreviousCellUI();
             }
 
-            //Item is placed in the cell
-            OccupyCurrentCellUI();
+            _previousCellUI = null;
 
             _isDragged = false;
         }
@@ -99,26 +76,40 @@ namespace InventorySystem
             }
         }
 
-        public void AssignCellUI(InventoryCellUI cellUI)
+        public void AssignItem(Item item)
+        {
+            _item = item;
+
+            _item.OnItemCountChanged += DisplayCount;
+            DisplayCount(_item.Count);
+
+            _item.OnItemCountZero += DestroyItemUI;
+            _item.OnRotationChanged += RotateItemUI;
+        }
+
+        public void AssignCurrentCellUI(InventoryCellUI cellUI)
         {
             _currentCellUI = cellUI;
+            OccupyCurrentCellUI();
         }
 
         private void ReturnToPreviousCellUI()
         {
             _currentCellUI = _previousCellUI;
-            _previousCellUI = null;
 
             if (!_currentCellUI.TryPlaceItemUI(this))
             {
                 _item.IsRotated = !_item.IsRotated;
                 _currentCellUI.TryPlaceItemUI(this);
             }
+
+            OccupyCurrentCellUI();
         }
 
         private void OccupyCurrentCellUI()
         {
-            transform.SetParent(_currentCellUI.transform);
+            transform.SetParent(_currentCellUI.transform.parent);
+            transform.position = _currentCellUI.transform.position;
         }
 
         private void DisplayCount(int count)
@@ -154,7 +145,7 @@ namespace InventorySystem
             }
         }
 
-        private void RotateItem()
+        public void RotateItem()
         {
             if (_isDragged)
             {

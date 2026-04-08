@@ -21,7 +21,7 @@ namespace InventorySystem
         {
             if ((bool)(OnItemPlaceRequested?.Invoke(itemUI)))
             {
-                itemUI.AssignCellUI(this);
+                itemUI.AssignCurrentCellUI(this);
                 return true;
             }
 

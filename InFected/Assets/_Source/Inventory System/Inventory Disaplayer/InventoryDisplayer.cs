@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -22,11 +23,14 @@ namespace InventorySystem
             HideInventory();
             _displayedInventory = inventory;
 
+            ShowWindow();
+
             ResizeCellsContent(inventory.Size);
             CreateCellUIs(inventory.Size);
-            CreateItemUIs();
 
-            ShowWindow();
+            //Delay solves the bug of incorrect item UI position
+            //CreateItemUIs(inventory);
+            StartCoroutine(CreateItemsUIWithDelay(inventory));
 
             void ResizeCellsContent(Vector2Int gridSize)
             {
@@ -63,18 +67,25 @@ namespace InventorySystem
                 }
             }
 
-            void CreateItemUIs()
+            void CreateItemUIs(Inventory inventory)
             {
-                foreach (Vector2Int placementOrigin in _displayedInventory.PlacementOrigins)
+                foreach (Vector2Int placementOrigin in inventory.PlacementOrigins)
                 {
-                    if (_displayedInventory.TryGetItemAt(placementOrigin, out Item item))
+                    if (inventory.TryGetItemAt(placementOrigin, out Item item))
                     {
                         ItemUI itemUI = Instantiate(item.ItemUIPrefab, transform);
                         itemUI.AssignItem(item);
-                        itemUI.AssignCellUI(_cellUIsDictionary[placementOrigin]);
+                        itemUI.AssignCurrentCellUI(_cellUIsDictionary[placementOrigin]);
                         _itemUIs.Add(itemUI);
                     }
                 }
+            }
+
+            IEnumerator CreateItemsUIWithDelay(Inventory inventory)
+            {
+                yield return null;
+
+                CreateItemUIs(inventory);
             }
         }
 
@@ -126,12 +137,12 @@ namespace InventorySystem
             _itemUIs.Remove(itemUI);
         }
 
-        public void ShowWindow()
+        private void ShowWindow()
         {
             gameObject.SetActive(true);
         }
 
-        public void HideWindow()
+        private void HideWindow()
         {
             gameObject.SetActive(false);
         }
