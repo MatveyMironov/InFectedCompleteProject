@@ -346,6 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7066630572230142201}
   - component: {fileID: 7043357885478748550}
+  - component: {fileID: 4170402195036011170}
   m_Layer: 5
   m_Name: Game Win Menu
   m_TagString: Untagged
@@ -400,6 +401,34 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &4170402195036011170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951287802355841591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 79102b7fce3d8a64485844ff1936fec4, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3561669036004132714}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &3561669036004132714
 GameObject:
@@ -938,7 +967,7 @@ PrefabInstance:
     - target: {fileID: 1895703127977297206, guid: de84f51b2b858ad47966f67fc815d13e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 7c7281e80dc38e0449551e56493ae5b1, type: 2}
+      objectReference: {fileID: 11400000, guid: 79102b7fce3d8a64485844ff1936fec4, type: 2}
     - target: {fileID: 1895703127977297206, guid: de84f51b2b858ad47966f67fc815d13e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
