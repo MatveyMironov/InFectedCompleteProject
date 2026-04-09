@@ -6,6 +6,7 @@ namespace GameEventSystem
     public class MultipleGameEventsListener : MonoBehaviour, IGameEventListener
     {
         [SerializeField] private GameEventSO[] gameEvents = new GameEventSO[0];
+        [Space]
         [SerializeField] private UnityEvent response;
 
         private void Awake()

@@ -6,6 +6,7 @@ namespace GameEventSystem
     public class GameEventListener : MonoBehaviour, IGameEventListener
     {
         [SerializeField] private GameEventSO gameEvent;
+        [Space]
         [SerializeField] private UnityEvent response;
 
         private void Awake()
