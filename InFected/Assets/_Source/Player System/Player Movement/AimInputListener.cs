@@ -17,14 +17,12 @@ namespace Core
         private void OnEnable()
         {
             aim.action.performed += OnAimInput;
-
             aim.action.Enable();
         }
 
         private void OnDisable()
         {
-            aim.action.performed += OnAimInput;
-
+            aim.action.performed -= OnAimInput;
             aim.action.Disable();
         }
 
