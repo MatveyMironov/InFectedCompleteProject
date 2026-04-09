@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace GameEventSystem
 {
-    public class GameEventListener : MonoBehaviour
+    public class GameEventListener : MonoBehaviour, IGameEventListener
     {
         [SerializeField] private GameEventSO gameEvent;
         [SerializeField] private UnityEvent response;
