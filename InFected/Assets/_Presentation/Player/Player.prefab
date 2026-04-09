@@ -1162,6 +1162,7 @@ GameObject:
   - component: {fileID: 3221335096066435246}
   - component: {fileID: 6265870187450731129}
   - component: {fileID: 5661353637638294556}
+  - component: {fileID: 5143460380699654205}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -1326,6 +1327,34 @@ MonoBehaviour:
   audioSource: {fileID: 3233402878281665460}
   walkingClip: {fileID: 8300000, guid: 957e136100246964cbcd9c2a8d6b476e, type: 3}
   sprintingClip: {fileID: 8300000, guid: 957e136100246964cbcd9c2a8d6b476e, type: 3}
+--- !u!114 &5143460380699654205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568628746932331549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ac4cec51fc8d3469c06c4fcdbbbee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 18adffb562e4dcb449ec6a83994dd3ad, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5661353637638294556}
+        m_TargetAssemblyTypeName: PlayerSystem.PlayerMovementController, Assembly-CSharp
+        m_MethodName: StopMoving
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7264924532540243317
 GameObject:
   m_ObjectHideFlags: 0

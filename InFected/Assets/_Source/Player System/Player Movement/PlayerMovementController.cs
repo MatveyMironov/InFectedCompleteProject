@@ -70,6 +70,11 @@ namespace PlayerSystem
             _movementDirection = movementDirection;
         }
 
+        public void StopMoving()
+        {
+            Move(new(0.0f, 0.0f));
+        }
+
         public void Sprint(bool isSprinting)
         {
             //Debug.Log("Sprint");
