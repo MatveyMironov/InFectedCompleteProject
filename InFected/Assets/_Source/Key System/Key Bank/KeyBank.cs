@@ -8,13 +8,13 @@ namespace KeySystem
     [CreateAssetMenu(fileName = "New Key Bank", menuName = "Key Bank")]
     public class KeyBank : ScriptableObject
     {
-        private readonly HashSet<KeyConfiguration> _keys = new();
+        private readonly HashSet<KeySO> _keys = new();
 
-        public KeyConfiguration[] Keys => _keys.ToArray();
-        public event Action<KeyConfiguration> OnKeyAdded;
-        public event Action<KeyConfiguration> OnKeyRemoved;
+        public KeySO[] Keys => _keys.ToArray();
+        public event Action<KeySO> OnKeyAdded;
+        public event Action<KeySO> OnKeyRemoved;
 
-        public bool TryAddKey(KeyConfiguration key)
+        public bool TryAddKey(KeySO key)
         {
             if (_keys.Add(key))
             {
@@ -25,7 +25,7 @@ namespace KeySystem
             return false;
         }
 
-        public bool TryRemoveKey(KeyConfiguration key)
+        public bool TryRemoveKey(KeySO key)
         {
             if (_keys.Remove(key))
             {
@@ -36,7 +36,7 @@ namespace KeySystem
             return false;
         }
 
-        public bool CheckIfContainsKey(KeyConfiguration key)
+        public bool CheckIfContainsKey(KeySO key)
         {
             return _keys.Contains(key);
         }

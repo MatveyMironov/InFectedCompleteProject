@@ -7,6 +7,6 @@ namespace MicrobeSampleSystem
     {
         [SerializeField] private MicrobeSampleDataSO microbeSample;
 
-        protected override KeyConfiguration _key => microbeSample;
+        protected override KeySO _key => microbeSample;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace MicrobeSampleSystem
 {
-    public class MicrobeSampleDisplayer : KeyDisplayer
+    public class MicrobeSampleDisplayer : KeyDisplayerMB
     {
         [SerializeField] private TextMeshProUGUI nameText;
         [SerializeField] private Image microbeImage;

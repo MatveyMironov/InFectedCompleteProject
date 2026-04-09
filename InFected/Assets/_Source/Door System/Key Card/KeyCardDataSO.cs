@@ -4,14 +4,14 @@ using UnityEngine;
 namespace DoorSystem
 {
     [CreateAssetMenu(fileName = "NewKeyCard", menuName = "Keys/Key Card")]
-    public class KeyCardDataSO : KeyConfiguration
+    public class KeyCardDataSO : KeySO
     {
         [SerializeField] private Color color;
         [SerializeField] private KeyCardUI keyCardUIPrefab;
 
         public Color Color { get => color; }
 
-        public override KeyDisplayer CreateKeyDisplayer()
+        public override KeyDisplayerMB CreateKeyDisplayer()
         {
             KeyCardUI keyCardUI = Instantiate(keyCardUIPrefab);
             keyCardUI.DisplayKey(keyName, color);

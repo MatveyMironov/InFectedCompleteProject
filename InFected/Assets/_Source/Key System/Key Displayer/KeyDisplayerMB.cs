@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace KeySystem
 {
-    public abstract class KeyDisplayer : MonoBehaviour
+    public abstract class KeyDisplayerMB : MonoBehaviour
     {
         //public void DisplayKey()
     }

@@ -5,7 +5,7 @@ namespace KeySystem
 {
     public abstract class KeyContainer : MonoBehaviour, IInteractable
     {
-        protected abstract KeyConfiguration _key { get; }
+        protected abstract KeySO _key { get; }
 
         [Header("Interaction")]
         [SerializeField] private InteractionIndicator indicator;

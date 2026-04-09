@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace DoorSystem
 {
-    public class KeyCardUI : KeyDisplayer
+    public class KeyCardUI : KeyDisplayerMB
     {
         [SerializeField] private TextMeshProUGUI nameText;
         [SerializeField] private Image colorIndicator;

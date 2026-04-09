@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace KeySystem
 {
-    public abstract class KeyConfiguration : ScriptableObject
+    public abstract class KeySO : ScriptableObject
     {
         [SerializeField] protected string keyName;
 
         public string Name => keyName;
 
-        public abstract KeyDisplayer CreateKeyDisplayer();
+        public abstract KeyDisplayerMB CreateKeyDisplayer();
     }
 }
