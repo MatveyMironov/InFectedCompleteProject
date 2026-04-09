@@ -1553,6 +1553,10 @@ PrefabInstance:
       propertyPath: InteractionSource
       value: 
       objectReference: {fileID: 3233402878281665460}
+    - target: {fileID: 3007358536604143025, guid: 53c4121bcdc5f1d478f6e79c92ddc6c3, type: 3}
+      propertyPath: interactionSource
+      value: 
+      objectReference: {fileID: 3233402878281665460}
     - target: {fileID: 5664405037779937474, guid: 53c4121bcdc5f1d478f6e79c92ddc6c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

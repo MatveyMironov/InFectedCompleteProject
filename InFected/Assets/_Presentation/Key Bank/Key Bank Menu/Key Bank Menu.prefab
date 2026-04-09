@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1271814f7f78345a21eb0d5215d204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyBank: {fileID: 11400000, guid: 7bd9348c69dc6bf4d8d9e8f3915a4e79, type: 2}
+  keyBankSO: {fileID: 11400000, guid: 7bd9348c69dc6bf4d8d9e8f3915a4e79, type: 2}
   content: {fileID: 415089709806744932}
 --- !u!1 &2836293184850256605
 GameObject:

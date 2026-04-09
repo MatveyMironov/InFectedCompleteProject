@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 namespace KeySystem
 {
-    [CreateAssetMenu(fileName = "New Key Bank", menuName = "Key Bank")]
-    public class KeyBank : ScriptableObject
+    public class KeyBank
     {
         private readonly HashSet<KeySO> _keys = new();
 
@@ -32,13 +30,18 @@ namespace KeySystem
                 OnKeyRemoved?.Invoke(key);
                 return true;
             }
-            
+
             return false;
         }
 
         public bool CheckIfContainsKey(KeySO key)
         {
             return _keys.Contains(key);
+        }
+
+        public void RemoveAllKeys()
+        {
+            _keys.Clear();
         }
     }
 }

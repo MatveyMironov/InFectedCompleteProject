@@ -7,10 +7,19 @@ namespace InteractionSystem
 {
     public class InteractionData : MonoBehaviour
     {
-        public InventoryInteractionManager InventoryInteractionManager;
-        public KeyBank KeyBank;
-        public Health Health;
-        public AudioSource InteractionSource;
+        [SerializeField] private KeyBankSO keyBankSO;
+        [SerializeField] private AudioSource interactionSource;
+        [SerializeField] private InventoryInteractionManager inventoryInteractionManager;
+
+        public InventoryInteractionManager InventoryInteractionManager => inventoryInteractionManager;
+        public KeyBank KeyBank { get; private set; }
+        public Health Health { get; private set; }
+        public AudioSource InteractionSource => interactionSource;
+
+        private void Awake()
+        {
+            KeyBank = keyBankSO.KeyBank;
+        }
 
         public void PlayInteractionEffect(AudioClip interactionClip)
         {

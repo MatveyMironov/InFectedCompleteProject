@@ -7,13 +7,20 @@ namespace KeySystem
     public class KeysCollectorCollectedKeysDisplayerMB : MonoBehaviour
     {
         [SerializeField] private KeysCollectorMB keysCollector;
-        [SerializeField] private KeyBank keyBank;
+        [SerializeField] private KeyBankSO keyBankSO;
 
         [Space]
         [SerializeField] private CollectedKeyDisplayerMB collectedKeyDisplayerPrefab;
         [SerializeField] private Transform content;
 
         private readonly Dictionary<KeySO, CollectedKeyDisplayerMB> _collectedKeysDisplayersDictionary = new();
+
+        private KeyBank _keyBank;
+
+        private void Awake()
+        {
+            _keyBank = keyBankSO.KeyBank;
+        }
 
         private void Start()
         {
@@ -22,16 +29,16 @@ namespace KeySystem
 
         private void OnEnable()
         {
-            keyBank.OnKeyAdded += DisplayKeyCollected;
-            keyBank.OnKeyRemoved += DisplayKeyLost;
+            _keyBank.OnKeyAdded += DisplayKeyCollected;
+            _keyBank.OnKeyRemoved += DisplayKeyLost;
 
             DisplayCollectedKeys();
         }
 
         private void OnDisable()
         {
-            keyBank.OnKeyAdded -= DisplayKeyCollected;
-            keyBank.OnKeyRemoved -= DisplayKeyLost;
+            _keyBank.OnKeyAdded -= DisplayKeyCollected;
+            _keyBank.OnKeyRemoved -= DisplayKeyLost;
         }
 
         private void DisplayRequiredKeys()
@@ -49,7 +56,7 @@ namespace KeySystem
 
         private void DisplayCollectedKeys()
         {
-            foreach (var key in keyBank.Keys)
+            foreach (var key in _keyBank.Keys)
             {
                 DisplayKeyCollected(key);
             }

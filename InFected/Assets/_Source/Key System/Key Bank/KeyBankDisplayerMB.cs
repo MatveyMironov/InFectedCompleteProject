@@ -5,19 +5,25 @@ namespace KeySystem
 {
     public class KeyBankDisplayerMB : MonoBehaviour
     {
-        [SerializeField] private KeyBank keyBank;
+        [SerializeField] private KeyBankSO keyBankSO;
 
         [Space]
         [SerializeField] private Transform content;
 
+        private KeyBank _keyBank;
         private readonly Dictionary<KeySO, KeyDisplayerMB> _keysDisplayersDictionary = new();
+
+        private void Awake()
+        {
+            _keyBank = keyBankSO.KeyBank;
+        }
 
         private void OnEnable()
         {
-            keyBank.OnKeyAdded += AddKeyDisplayer;
-            keyBank.OnKeyRemoved += RemoveKeyDisplayer;
+            _keyBank.OnKeyAdded += AddKeyDisplayer;
+            _keyBank.OnKeyRemoved += RemoveKeyDisplayer;
 
-            foreach (KeySO key in keyBank.Keys)
+            foreach (KeySO key in _keyBank.Keys)
             {
                 AddKeyDisplayer(key);
             }
@@ -25,8 +31,8 @@ namespace KeySystem
 
         private void OnDisable()
         {
-            keyBank.OnKeyAdded -= AddKeyDisplayer;
-            keyBank.OnKeyRemoved -= RemoveKeyDisplayer;
+            _keyBank.OnKeyAdded -= AddKeyDisplayer;
+            _keyBank.OnKeyRemoved -= RemoveKeyDisplayer;
         }
 
         private void AddKeyDisplayer(KeySO key)

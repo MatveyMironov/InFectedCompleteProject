@@ -345,9 +345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7b2f4acf27d224ab83e259f56ffb34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryInteractionManager: {fileID: 5408794063819494760}
-  KeyBank: {fileID: 11400000, guid: 7bd9348c69dc6bf4d8d9e8f3915a4e79, type: 2}
-  InteractionSource: {fileID: 0}
+  keyBankSO: {fileID: 11400000, guid: 7bd9348c69dc6bf4d8d9e8f3915a4e79, type: 2}
+  interactionSource: {fileID: 0}
+  inventoryInteractionManager: {fileID: 5408794063819494760}
 --- !u!114 &2879133384244072459
 MonoBehaviour:
   m_ObjectHideFlags: 0
