@@ -22,7 +22,7 @@ namespace InventorySystem
                 }
                 else
                 {
-                    Debug.Log($"Failed to place {item.Count} units of {item} at {itemPlacement.PlacementOrigin}");
+                    Debug.Log($"Failed to place {item.Count} units of {item.Name} at {itemPlacement.PlacementOrigin}");
                 }
             }
         }

@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 413568956371002998, guid: ae806e4c542ab0e41bf467e83924e601, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -72.040565
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 413568956371002998, guid: ae806e4c542ab0e41bf467e83924e601, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.930902
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 413568956371002998, guid: ae806e4c542ab0e41bf467e83924e601, type: 3}
       propertyPath: m_LocalPosition.z
@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7496109550087927400, guid: ae806e4c542ab0e41bf467e83924e601, type: 3}
       propertyPath: m_Name
-      value: Level Fragment Variant
+      value: Floor 1 Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
