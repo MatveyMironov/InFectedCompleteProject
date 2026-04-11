@@ -844,6 +844,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 404409726}
     m_Modifications:
+    - target: {fileID: 845335488707235933, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
+      propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Armory. Weapons and ammo are kept here. This means of course, that the
+        door is usually locked.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702115771305750059, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 4321887506896864208, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_Radius
       value: 2
@@ -858,7 +867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -51
+      value: -49.5
       objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1233,6 +1242,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 404409726}
     m_Modifications:
+    - target: {fileID: 845335488707235933, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
+      propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Looks like another storage room. But this one was used for medical suplies.
+        Should be some left.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702115771305750059, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 4321887506896864208, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_Radius
       value: 3
@@ -1247,7 +1265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -51
+      value: -47
       objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4643,6 +4661,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 404409726}
     m_Modifications:
+    - target: {fileID: 845335488707235933, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
+      propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: To many enemies ahead. I don't have enough ammo. But they seem unaible
+        to run fast... (press [Shift] to sprint while depliting stamina)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702115771305750059, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4321887506896864208, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_Radius
       value: 3
@@ -4651,9 +4678,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Narrative Trigger Zone (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4654396901596383371, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
+      propertyPath: m_Size.y
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25
+      value: 25.5
       objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7754,6 +7785,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 404409726}
     m_Modifications:
+    - target: {fileID: 845335488707235933, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
+      propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: This door leads to the main lab. But it needs a key-card to open. Maybe
+        I can find one somewhere nearby.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702115771305750059, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 4321887506896864208, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_Radius
       value: 3
@@ -7764,7 +7804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -9.5
       objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10780,13 +10820,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 404409726}
     m_Modifications:
+    - target: {fileID: 845335488707235933, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
+      propertyPath: OnTriggerEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Infected people are very agressive. And I spent all my ammo on the way
+        to this labs. I am lucky that armory is nearby.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702115771305750059, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4503770229698755625, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_Name
       value: Narrative Trigger Zone
       objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 8101851746714241465, guid: 412ea947dc9c4d14f81e08ec31f5d4b5, type: 3}
       propertyPath: m_LocalPosition.y
