@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5fd2258958cd44e8febb9736a602cc, type: 3}
   m_Name: Microbe Sample 2
   m_EditorClassIdentifier: 
-  keyName: Microbe Sample
+  keyName: Microbe Sample 2
   microbeSprite: {fileID: 21300000, guid: b9467ea1c8575f94097cce755829b08c, type: 3}
-  microbeSampleUIPrefab: {fileID: 6027259564454775214, guid: 48e0cd3ad93f9b443a242acb60cd4add, type: 3}
+  microbeSampleDisplayerPrefab: {fileID: 6027259564454775214, guid: 48e0cd3ad93f9b443a242acb60cd4add, type: 3}
