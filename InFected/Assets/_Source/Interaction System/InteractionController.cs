@@ -31,7 +31,6 @@ namespace InteractionSystem
 
         public void Interact()
         {
-                _currentInteractable.Interact(interactionData);
             if (_currentInteractable == null) { return; }
 
             _currentInteractable.Interact(interactionData);
