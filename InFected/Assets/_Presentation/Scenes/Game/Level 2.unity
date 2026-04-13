@@ -5731,6 +5731,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 290146498}
     m_Modifications:
+    - target: {fileID: 2713349481338073859, guid: 6598c159b124d05428d2370cc28ddbc2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 897ab6afa7b60d1488ddeb0dff3df28b, type: 3}
     - target: {fileID: 3490864456160259033, guid: 6598c159b124d05428d2370cc28ddbc2, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -8381,6 +8385,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 290146498}
     m_Modifications:
+    - target: {fileID: 2713349481338073859, guid: 6598c159b124d05428d2370cc28ddbc2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8a9d35a9dde5b9946b877123498811a1, type: 3}
     - target: {fileID: 3490864456160259033, guid: 6598c159b124d05428d2370cc28ddbc2, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -11675,7 +11683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674468868488769383, guid: 680af8bbd0abd7a489821e26f4e54ad0, type: 3}
       propertyPath: response.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level 2
+      value: Main Menu
       objectReference: {fileID: 0}
     - target: {fileID: 4709127988584766996, guid: 680af8bbd0abd7a489821e26f4e54ad0, type: 3}
       propertyPath: m_Name
@@ -17193,6 +17201,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 290146498}
     m_Modifications:
+    - target: {fileID: 2713349481338073859, guid: 6598c159b124d05428d2370cc28ddbc2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b9467ea1c8575f94097cce755829b08c, type: 3}
     - target: {fileID: 3490864456160259033, guid: 6598c159b124d05428d2370cc28ddbc2, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -21813,6 +21825,12 @@ PrefabInstance:
     - target: {fileID: 7010315986028279501, guid: 41d14af0f4903c640b6f0a928d62cfd2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135435484399897444, guid: 41d14af0f4903c640b6f0a928d62cfd2, type: 3}
+      propertyPath: m_text
+      value: This is the main lab. All this mess started from here. I need to find
+        samples of microorganisms, that were studied here, and put them into an analyzer
+        to create a cure.
       objectReference: {fileID: 0}
     - target: {fileID: 7167578231022777160, guid: 41d14af0f4903c640b6f0a928d62cfd2, type: 3}
       propertyPath: m_AnchorMax.y
