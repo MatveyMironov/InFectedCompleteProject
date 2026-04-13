@@ -21,8 +21,8 @@ namespace Core
 
         private void OnDisable()
         {
-            shoot.action.started += OnShootInput;
-            shoot.action.canceled += OnShootInput;
+            shoot.action.started -= OnShootInput;
+            shoot.action.canceled -= OnShootInput;
 
             shoot.action.Disable();
         }
