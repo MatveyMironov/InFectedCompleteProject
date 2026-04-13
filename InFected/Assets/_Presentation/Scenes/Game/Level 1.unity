@@ -2028,6 +2028,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7135435484399897444, guid: 41d14af0f4903c640b6f0a928d62cfd2, type: 3}
+      propertyPath: m_text
+      value: I'm getting closer to the main lab. But path is blocked and I need to
+        find a key again.
+      objectReference: {fileID: 0}
     - target: {fileID: 7265379783768873339, guid: 41d14af0f4903c640b6f0a928d62cfd2, type: 3}
       propertyPath: m_Name
       value: Canvas
