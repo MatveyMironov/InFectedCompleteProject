@@ -257,6 +257,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3ebe89bbf621c9b43ae8199ad32927e5, type: 2}
   - {fileID: 11400000, guid: 312317cb15f4e594481aaf06476f880a, type: 2}
   - {fileID: 11400000, guid: 9913183c5b2e7b343a97a2ddf2d18d6f, type: 2}
+  keyBankSO: {fileID: 11400000, guid: 5b1c8218b17678b4ea2af75678a6db0d, type: 2}
   OnAllKeysCollected:
     m_PersistentCalls:
       m_Calls:

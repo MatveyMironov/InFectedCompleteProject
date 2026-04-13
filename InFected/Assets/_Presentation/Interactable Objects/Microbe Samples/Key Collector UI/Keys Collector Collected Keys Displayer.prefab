@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keysCollector: {fileID: 0}
-  keyBankSO: {fileID: 11400000, guid: 7bd9348c69dc6bf4d8d9e8f3915a4e79, type: 2}
+  keyBankSO: {fileID: 11400000, guid: 5b1c8218b17678b4ea2af75678a6db0d, type: 2}
   collectedKeyDisplayerPrefab: {fileID: 6713928859300020203, guid: 468d5eed7fede6a4da40db3a36277308, type: 3}
   content: {fileID: 5543317291842312195}
 --- !u!1 &5555992571276627641

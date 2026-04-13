@@ -9,13 +9,21 @@ namespace KeySystem
     {
         [SerializeField] private KeySO[] requiredKeys = new KeySO[0];
         [Space]
+        [SerializeField] private KeyBankSO keyBankSO;
         [SerializeField] private UnityEvent OnAllKeysCollected;
 
         [Header("Interaction")]
         [SerializeField] private GameObject interactionIndicator;
 
+        private KeyBank _keyBank;
+
         public KeySO[] RequiredKeys => requiredKeys.ToArray();
         public int RequiredKeysCount => requiredKeys.Length;
+
+        private void Awake()
+        {
+            _keyBank = keyBankSO.KeyBank;
+        }
 
         private void Start()
         {
@@ -34,8 +42,7 @@ namespace KeySystem
 
         public void Interact(InteractionData interaction)
         {
-            KeyBank keyBank = interaction.KeyBank;
-            if (CheckIfAllRequiredKeysPresent(keyBank))
+            if (CheckIfAllRequiredKeysPresent(_keyBank))
             {
                 OnAllKeysCollected.Invoke();
             }

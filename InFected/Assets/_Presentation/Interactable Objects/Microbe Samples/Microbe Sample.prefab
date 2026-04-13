@@ -286,6 +286,7 @@ MonoBehaviour:
   indicator: {fileID: 7295376028573909324}
   interactionClip: {fileID: 8300000, guid: 2482aa1d79653a647a99a6e014140698, type: 3}
   microbeSample: {fileID: 0}
+  keyBankSO: {fileID: 11400000, guid: 5b1c8218b17678b4ea2af75678a6db0d, type: 2}
 --- !u!1001 &4088876676273132074
 PrefabInstance:
   m_ObjectHideFlags: 0
