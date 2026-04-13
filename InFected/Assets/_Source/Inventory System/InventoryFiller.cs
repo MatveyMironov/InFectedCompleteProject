@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace InventorySystem
@@ -7,7 +6,7 @@ namespace InventorySystem
     [Serializable]
     public class InventoryFiller
     {
-        [SerializeField] private List<ItemPlacement> itemPlacements;
+        [SerializeField] private ItemPlacement[] itemPlacements = new ItemPlacement[0];
 
         public void FillInventory(Inventory inventory)
         {
