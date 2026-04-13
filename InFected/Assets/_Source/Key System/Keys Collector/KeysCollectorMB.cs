@@ -42,8 +42,11 @@ namespace KeySystem
 
         public void Interact(InteractionData interaction)
         {
+            //Debug.Log("Interact");
+
             if (CheckIfAllRequiredKeysPresent(_keyBank))
             {
+                //Debug.Log("All required keys present");
                 OnAllKeysCollected.Invoke();
             }
         }
@@ -54,8 +57,11 @@ namespace KeySystem
             {
                 if (!keyBank.CheckIfContainsKey(key))
                 {
+                    //Debug.Log($"{key.Name} is not present");
                     return false;
                 }
+
+                //Debug.Log($"{key.Name} is present");
             }
 
             return true;
