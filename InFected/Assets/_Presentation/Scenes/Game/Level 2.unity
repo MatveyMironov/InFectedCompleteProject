@@ -11679,11 +11679,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2074731155321089813, guid: 680af8bbd0abd7a489821e26f4e54ad0, type: 3}
       propertyPath: response.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level 1
+      value: Main Menu
       objectReference: {fileID: 0}
     - target: {fileID: 2674468868488769383, guid: 680af8bbd0abd7a489821e26f4e54ad0, type: 3}
       propertyPath: response.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Main Menu
+      value: Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 4709127988584766996, guid: 680af8bbd0abd7a489821e26f4e54ad0, type: 3}
       propertyPath: m_Name
